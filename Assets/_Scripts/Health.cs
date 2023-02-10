@@ -14,7 +14,7 @@ public abstract class Health : MonoBehaviour
         _currentHealth = maxHealth;
     }
 
-    public virtual void ChangeHealth(int change)
+    public virtual void ChangeHealth(int change, GameObject from)
     {
         _currentHealth += change;
         if (_currentHealth <= 0)

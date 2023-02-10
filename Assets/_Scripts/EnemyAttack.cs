@@ -17,18 +17,15 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         _destinationSetter = GetComponent<AIDestinationSetter>();
+        
+        // find root and assign it as target
+        _destinationSetter.target = FindObjectOfType<Root>().transform;
     }
 
     // Update is called once per frame
     private bool _attacking;
     void Update()
     {
-        if (_destinationSetter.target == null)
-        {
-            return;
-        }
-        
-        
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -74,7 +71,7 @@ public class EnemyAttack : MonoBehaviour
         }
         else
         {
-            health.ChangeHealth(-attackDamage);
+            health.ChangeHealth(-attackDamage, gameObject);
         }
     }
 }
