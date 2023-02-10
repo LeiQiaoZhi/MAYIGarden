@@ -14,7 +14,7 @@ public abstract class Health : MonoBehaviour
         _currentHealth = maxHealth;
     }
 
-    public void ChangeHealth(int change)
+    public virtual void ChangeHealth(int change)
     {
         _currentHealth += change;
         if (_currentHealth <= 0)
