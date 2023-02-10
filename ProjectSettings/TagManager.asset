@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Post
   - Obstacles
-  - 
+  - MovableEntities
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Static(SL)
+    uniqueID: 3697440497
+    locked: 0
+  - name: Movable(SL)
+    uniqueID: 3841602157
     locked: 0
