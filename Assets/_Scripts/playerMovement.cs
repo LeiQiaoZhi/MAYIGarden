@@ -8,12 +8,14 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     //[Range(0, .3f)][SerializeField] private float myMovementSmoothing = .05f;
+    public Transform scanAreaCentre;
     public SpriteRenderer spriteRenderer;
     public Sprite horizontalSprite;
     public Sprite verticalSprite;
     public Rigidbody2D myRigidbody;
     private int isRight=1;
     private int isUp=1;
+    public float attackCentreDist = 1;
     [Range(0, 40)][SerializeField] public float mySpeed = 10;
     //private Vector2 currentVelocity = Vector2.zero;
     //private Vector2 targetVelocity = Vector2.zero;
@@ -102,16 +104,21 @@ public class playerMovement : MonoBehaviour
         Vector2 localScale = gameObject.transform.localScale;//hard code to avoided inverted sprite when moving.
         if (direction == "Horizontal")
         {
+            //keep the vertical scale to positive when moving horizontally
+            //if (localScale.y < 0)
+            //{
+            //   localScale.y = Mathf.Abs(localScale.y);
+            //   gameObject.transform.localScale = localScale;
+            //}
+
+            // Change direction of attack centre
+            scanAreaCentre.position = gameObject.transform.position + attackCentreDist * Vector3.right * localScale.x;
             spriteRenderer.sprite = horizontalSprite;
-            // filp vertical back to normal
-            if(localScale.y < 0)
-            {
-                localScale.y = -localScale.y;
-                gameObject.transform.localScale = localScale;
-            }
         }
         if (direction == "Vertical")
         {
+            // Change direction of attack centre
+            scanAreaCentre.position = gameObject.transform.position + attackCentreDist * Vector3.up * localScale.y;
             spriteRenderer.sprite = verticalSprite;
         }
     }
