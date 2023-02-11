@@ -48,6 +48,7 @@ public class playerHealth: Health
         normalSpeed = movement_manager.mySpeed;
         movement_manager.mySpeed= 0;
         immune= true;
+        movement_manager.freezePos();
         Debug.Log("The player is immune now.");
         StartCoroutine(dieAndRotate(dieRotTime,normalSpeed));  
     }
@@ -65,6 +66,7 @@ public class playerHealth: Health
         Debug.Log(movement_manager.mySpeed);
         _currentHealth = maxHealth;
         Debug.Log("Restored Player Health to " + maxHealth);
+        movement_manager.UnfreezePos();
         yield return new WaitForSeconds(immuneTime);
         immune = false;
         Debug.Log("The player is now normal");
