@@ -139,6 +139,104 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4344630199659080556, guid: 235160131561a22488b82f8496e891da, type: 3}
   m_PrefabInstance: {fileID: 4344630199460429041}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &546663656
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 18623489, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 18623489, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 18623490, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2588235
+      objectReference: {fileID: 0}
+    - target: {fileID: 18623490, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6863336
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_Name
+      value: RangedEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328139770197185987, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+--- !u!1 &546663657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+  m_PrefabInstance: {fileID: 546663656}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &546663658
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546663657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0e3cac49a1b54a4fb2b63634bc9ea5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &555508256
 PrefabInstance:
   m_ObjectHideFlags: 0
