@@ -84,6 +84,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1039341670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039341671}
+  m_Layer: 9
+  m_Name: ScanAreaCentre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1039341671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039341670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1684411819299273205}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684411819299273208
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,8 +128,10 @@ GameObject:
   - component: {fileID: 1684411819299273206}
   - component: {fileID: 1684411819299273209}
   - component: {fileID: 586953479}
-  - component: {fileID: 586953480}
   - component: {fileID: 586953485}
+  - component: {fileID: 909332623}
+  - component: {fileID: 909332629}
+  - component: {fileID: 909332637}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -115,10 +148,11 @@ Transform:
   m_GameObject: {fileID: 1684411819299273208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.5630293}
+  m_LocalScale: {x: 0.633408, y: 0.6122944, z: 0.5630293}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 746905547}
+  - {fileID: 1039341671}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -188,9 +222,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0988fa2e9d0cb240807d1ab795320c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHealth: {fileID: 586953480}
+  myHealth: {fileID: 0}
   kill: 0
---- !u!114 &586953480
+  suicideDamage: 10
+--- !u!114 &586953485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684411819299273208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c81992217d3237408aa4393854f4a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeKey: 32
+  turretPrefab: {fileID: 810667712011595001, guid: 1fc96b6d59c7a94499ef4542f19b74a6, type: 3}
+--- !u!114 &909332623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,7 +255,9 @@ MonoBehaviour:
   movement_manager: {fileID: 1684411819299273209}
   counterDamage: 0
   normalSpeed: 10
---- !u!114 &586953485
+  rotPerSec: 240
+  dieRotTime: 3
+--- !u!114 &909332629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,8 +266,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1684411819299273208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c81992217d3237408aa4393854f4a97, type: 3}
+  m_Script: {fileID: 11500000, guid: d0988fa2e9d0cb240807d1ab795320c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeKey: 32
-  turretPrefab: {fileID: 810667712011595001, guid: 1fc96b6d59c7a94499ef4542f19b74a6, type: 3}
+  myHealth: {fileID: 909332623}
+  kill: 0
+  suicideDamage: 10
+--- !u!114 &909332637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684411819299273208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6556ae449299d374f82618e402dd34dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanAreaRadius: 1.5
+  scanAreaCentre: {fileID: 1039341671}
+  secondsBetweenAttacks: 1.5
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  playerAttackDamage: 1
