@@ -7,7 +7,12 @@ public class playerTunnel : MonoBehaviour
     public tunnelManager tm;
     public KeyCode TunnelKey = KeyCode.T;
     public float coolDownTime = 1f;
-    private float nextTunnelTime = 0f; 
+    private float nextTunnelTime = 0f;
+
+    private void Start()
+    {
+        tm = FindObjectOfType<tunnelManager>();
+    }
 
     // Update is called once per frame
     void Update()

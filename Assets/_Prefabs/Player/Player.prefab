@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 909332623}
   - component: {fileID: 909332629}
   - component: {fileID: 909332637}
+  - component: {fileID: 3052350012555168390}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -205,10 +206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d3d68b2d06b8f428e47a584f87a29c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scanAreaCentre: {fileID: 1039341671}
   spriteRenderer: {fileID: 746905546}
   horizontalSprite: {fileID: 21300000, guid: 4f3a106299767d146975053c7be09b97, type: 3}
   verticalSprite: {fileID: 21300000, guid: 7af5f1b9cb7fc7645a9f27f070fbe2fd, type: 3}
   myRigidbody: {fileID: 1684411819299273207}
+  attackCentreDist: 1
   mySpeed: 10
 --- !u!114 &586953479
 MonoBehaviour:
@@ -288,9 +291,24 @@ MonoBehaviour:
   secondsBetweenAttacks: 1.5
   targetLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   playerAttackDamage: 1
   attackDist: 0.5
   attackAnimateTime: 0.2
   attackAnimateScale: 1.5
   attackKey: 106
+--- !u!114 &3052350012555168390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684411819299273208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25501362fab2fe84d9bf6d3d5c904e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  TunnelKey: 116
+  coolDownTime: 1

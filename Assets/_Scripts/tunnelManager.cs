@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class tunnelManager : MonoBehaviour
 {
-    public int seedNum = 2;
+    public int seedNum = 0;
     private GameObject[] tunnelList = new GameObject[2];
     private int tunnelNum = 0; //this will need to change to private later
     public GameObject tunnelPrefab;
