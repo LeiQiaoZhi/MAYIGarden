@@ -16,13 +16,12 @@ public class Turret : MonoBehaviour
 
 
     Transform _target;
-    public float minAngleToClampSpeed = 10;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
-
+    
     private void Update()
     {
         // Rotate the turret towards the target if there is any
@@ -34,9 +33,10 @@ public class Turret : MonoBehaviour
                 return;
             }
 
+            RotateHelper.RotateTowards(_rb,_target,transform.right,rotateSpeed);
             var direction = (Vector2)(_target.position - transform.position).normalized;
-            float rotateAmount = Vector3.Cross(direction, transform.right).z;
-            _rb.angularVelocity = -rotateAmount * rotateSpeed;
+            // float rotateAmount = Vector3.Cross(direction, transform.right).z;
+            // _rb.angularVelocity = -rotateAmount * rotateSpeed;
             
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
             float angleDiff = (targetAngle - transform.rotation.eulerAngles.z);
@@ -44,15 +44,6 @@ public class Turret : MonoBehaviour
             {
                 angleDiff += 360;
             }
-            //
-            // float rotateIncrement = angleDiff * Time.deltaTime * rotateSpeed;
-            // if (Mathf.Abs(rotateIncrement) < minAngleToClampSpeed * rotateSpeed * Time.deltaTime)
-            // {
-            //     rotateIncrement = Mathf.Sign(rotateIncrement) * minAngleToClampSpeed * rotateSpeed * Time.deltaTime;
-            // }
-            //
-            // transform.Rotate(Vector3.forward,rotateIncrement);
-            // transform.rotation = Quaternion.AngleAxis(Mathf.Lerp(), Vector3.forward);
 
             // Fire a bullet if the fire rate time has passed
             if (Time.time >= fireTime && Mathf.Abs(angleDiff) < 5)

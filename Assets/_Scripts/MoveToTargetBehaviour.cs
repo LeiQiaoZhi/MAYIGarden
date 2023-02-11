@@ -1,39 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class MoveToTargetBehaviour : StateMachineBehaviour
 {
-    private Transform _target;
     private float _range;
+    private RangedAttack _rangedAttack;
+    private Rigidbody2D _rb;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        RangedAttack rangedAttack = animator.GetComponent<RangedAttack>();
-        _range = rangedAttack.range;
+        _rangedAttack = animator.GetComponent<RangedAttack>();
+        _range = _rangedAttack.range;
+        _rb = _rangedAttack.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!_target)
+        Transform target = _rangedAttack.target;
+        if (!target)
         {
-            FindTarget();
+            FindTarget(animator.transform.position);
+        }
+        else
+        {
+            RotateHelper.RotateTowards(_rb,target,_rb.transform.up,_rangedAttack.rotateSpeed);
         }
 
-        if (_target && Vector2.Distance(_target.position, animator.transform.position) < _range)
+        if (target && Vector2.Distance(target.position, animator.transform.position) < _range)
         {
-            animator.SetBool("TargetInRange",true);
+            Debug.LogWarning("Target In Range!");
+            _rangedAttack.Stop();
+            animator.SetBool("TargetInRange", true);
         }
     }
 
-    void FindTarget()
+    void FindTarget(Vector3 position)
     {
-        // TODO: find according to distance
         var rootTrans = FindObjectOfType<Root>().transform;
         var playerTrans = FindObjectOfType<PlayerTurret>().transform;
-        
+
+        Debug.LogWarning("Finding Target for Ranged Enemy");
+        if (Vector2.Distance(rootTrans.position, position) < Vector2.Distance(playerTrans.position, position))
+        {
+            _rangedAttack.SetTarget(rootTrans);
+        }
+        else
+        {
+            _rangedAttack.SetTarget(playerTrans);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

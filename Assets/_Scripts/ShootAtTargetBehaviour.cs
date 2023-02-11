@@ -4,33 +4,48 @@ using UnityEngine;
 
 public class ShootAtTargetBehaviour : StateMachineBehaviour
 {
-    private Transform _target;
     private float _range;
-    private RangedAttack rangedAttack;
+    private RangedAttack _rangedAttack;
+    private Rigidbody2D _rb;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rangedAttack = animator.GetComponent<RangedAttack>();
-        _range = rangedAttack.range;
+        _rangedAttack = animator.GetComponent<RangedAttack>();
+        _range = _rangedAttack.range;
+        _rb = animator.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    float fireTime = 0;
+    private float _fireTime = 0;
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_target && Vector2.Distance(_target.position, animator.transform.position) < _range)
+        Transform target = _rangedAttack.target;
+        if (target && Vector2.Distance(target.position, animator.transform.position) < _range)
         {
-            if (Time.time > fireTime)
+            var angleBetween =
+                RotateHelper.AngleBetween(_rb.transform.position, target.position, animator.transform.up);
+            if (Time.time > _fireTime && angleBetween<10)
             {
                 // shoot
-                fireTime += rangedAttack.secondsBetweenFire;
+                Debug.LogWarning($"Shoot at {target}");
+                _rangedAttack.Shoot();
+                _fireTime = Time.time + _rangedAttack.secondsBetweenFire;
+            }
+            else
+            {
+                var direction = (Vector2)(target.position - _rb.transform.position).normalized;
+                float rotateAmount = Vector3.Cross(direction, _rb.transform.up).z;
+                _rb.angularVelocity = -rotateAmount * _rangedAttack.rotateSpeed;
             }
         }
         else
         {
+            Debug.LogWarning("Target Out of Range");
             animator.SetBool("TargetInRange", false);
+            // resume walking
+            _rangedAttack.SetTarget(null);
         }
     }
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

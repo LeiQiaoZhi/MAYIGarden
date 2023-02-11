@@ -6,11 +6,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class HomingBullet : Bullet
 {
-    public LayerMask targetLayers;
     public Transform scannAreaCenter;
     public float scanAreaRadius;
+
+    [Tooltip("If out of range, stop homing")]
+    public float homingRadius;
+
     [SerializeField] private float rotateSpeed;
-    
+
     [SerializeField] private Transform _target;
     private Rigidbody2D _rb;
 
@@ -37,16 +40,19 @@ public class HomingBullet : Bullet
         // homing behaviour
         else
         {
-            var direction = (Vector2)(_target.position - transform.position).normalized;
-            float rotateAmount = Vector3.Cross(direction, transform.right).z;
-            _rb.angularVelocity = -rotateAmount * rotateSpeed;
-            _rb.velocity = transform.right * speed;
+            if (Vector2.Distance(_target.position, transform.position) < homingRadius)
+            {
+                var direction = (Vector2)(_target.position - transform.position).normalized;
+                float rotateAmount = Vector3.Cross(direction, GetFacingDirection()).z;
+                _rb.angularVelocity = -rotateAmount * rotateSpeed;
+                _rb.velocity = GetFacingDirection() * speed;
+            }
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(scannAreaCenter.position,scanAreaRadius);
+        Gizmos.DrawWireSphere(scannAreaCenter.position, scanAreaRadius);
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4992533005666424010}
   - component: {fileID: 4109970072569146781}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7595763459066678107}
   - component: {fileID: 7595763459066678106}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 7595763459677873756}
   - component: {fileID: 7595763460138570225}
   - component: {fileID: 4101845280212889934}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Root
   m_TagString: Root
   m_Icon: {fileID: 0}
