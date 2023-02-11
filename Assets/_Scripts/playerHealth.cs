@@ -9,6 +9,7 @@ public class playerHealth: Health
     public playerMovement movement_manager;
     public int counterDamage = 2;
     private GameManager _gameManager;
+    public float normalSpeed = 10;
     private void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
@@ -37,9 +38,8 @@ public class playerHealth: Health
         Debug.LogWarning("PLAYER HAS DIED.");
 
         // stop player motion for 5 seconds, flashing, and continue moving after.
-        float currentSpeed = movement_manager.mySpeed;
         movement_manager.mySpeed= 0;
-        StartCoroutine(Fade(currentSpeed));  
+        StartCoroutine(Fade(normalSpeed));  
     }
 
     private IEnumerator Fade(float curr_speed)
