@@ -71,6 +71,18 @@ public class playerMovement : MonoBehaviour
 
     }
 
+    public IEnumerator AttackAnimate(float distance, float attackAnimateTime,float attackScaleRatio = 1.5f)
+    {
+        Vector2 attackScale = spriteRenderer.transform.localScale;
+        attackScale.x *= attackScaleRatio;
+        attackScale.y /= attackScaleRatio;
+        Vector2 originalScale = spriteRenderer.transform.localScale;
+        spriteRenderer.transform.Translate(distance,0,0);
+        spriteRenderer.transform.localScale = attackScale;
+        yield return new WaitForSeconds(attackAnimateTime);
+        spriteRenderer.transform.Translate(-distance, 0, 0);
+        spriteRenderer.transform.localScale = originalScale;
+    }
     private void flipDir(string direction)
     {
         Vector2 localScale = gameObject.transform.localScale;
