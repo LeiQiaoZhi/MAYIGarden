@@ -5,7 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class playerAttack : MonoBehaviour
 {
-
+    public playerMovement myMovement;
     public float scanAreaRadius = 10f;
     public Transform scanAreaCentre; // the centre position of plyaer's attack scanning region
     public float secondsBetweenAttacks = 1f;
@@ -13,6 +13,10 @@ public class playerAttack : MonoBehaviour
     public LayerMask targetLayers;
     private Transform _target;
     public int playerAttackDamage = 1;
+    public float attackDist = 3f;
+    public float attackAnimateTime = 0.5f;
+    public float attackAnimateScale = 1.5f;
+    public KeyCode attackKey = KeyCode.J;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +27,13 @@ public class playerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && Time.time >= nextAttackTime)
-        {   
+        if (Input.GetKeyDown(attackKey) && Time.time >= nextAttackTime)
+        {
+            // When the player is attacking
+
+            // Added movement animation 
+            StartCoroutine(myMovement.AttackAnimate(attackDist,attackAnimateTime,attackAnimateScale));
+
             nextAttackTime= Time.time + secondsBetweenAttacks;
             //1. find all enemies in the radius
             Debug.Log("Player trying to attack");
