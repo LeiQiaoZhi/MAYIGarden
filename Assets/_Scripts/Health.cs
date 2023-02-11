@@ -6,7 +6,7 @@ public abstract class Health : MonoBehaviour
 {
     public int maxHealth;
     
-    private int _currentHealth;
+    protected int _currentHealth;
 
     // Start is called before the first frame update
     void Start()

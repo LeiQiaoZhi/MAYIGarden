@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0988fa2e9d0cb240807d1ab795320c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHealth: {fileID: 0}
+  myHealth: {fileID: 909332623}
   kill: 0
   suicideDamage: 10
 --- !u!114 &586953485
@@ -253,8 +253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   movement_manager: {fileID: 1684411819299273209}
-  counterDamage: 0
-  normalSpeed: 10
   rotPerSec: 240
   dieRotTime: 3
 --- !u!114 &909332629

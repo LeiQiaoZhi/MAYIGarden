@@ -7,9 +7,9 @@ using UnityEngine;
 public class playerHealth: Health
 {
     public playerMovement movement_manager;
-    public int counterDamage = 2;
+    //public int counterDamage = 2;
     private GameManager _gameManager;
-    public float normalSpeed = 10;
+    private float normalSpeed;
     public int rotPerSec = 240;
     public float dieRotTime = 3;
 
@@ -39,6 +39,7 @@ public class playerHealth: Health
         Debug.LogWarning("PLAYER HAS DIED.");
 
         // stop player motion for 6 seconds, flashing, and continue moving after.
+        normalSpeed = movement_manager.mySpeed;
         movement_manager.mySpeed= 0;
         StartCoroutine(dieAndRotate(dieRotTime,normalSpeed));  
     }

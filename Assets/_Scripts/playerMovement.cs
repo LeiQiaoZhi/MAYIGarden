@@ -87,7 +87,7 @@ public class playerMovement : MonoBehaviour
 
     private void changeSprite(string direction)
     {
-        Vector2 localScale = gameObject.transform.localScale;//hard code
+        Vector2 localScale = gameObject.transform.localScale;//hard code to avoided inverted sprite when moving.
         if (direction == "Horizontal")
         {
             spriteRenderer.sprite = horizontalSprite;
