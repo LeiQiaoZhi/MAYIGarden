@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 18623489}
   - component: {fileID: 18623490}
+  - component: {fileID: 1222906146}
+  - component: {fileID: 1222906147}
   m_Layer: 8
-  m_Name: Isometric Diamond
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: 3625043607559282579, guid: 447fddd3313f6b143b4953264191dcb6, type: 3}
-  m_Color: {r: 1, g: 0.6863336, b: 0.2588235, a: 1}
+  m_Color: {r: 1, g: 0.2588235, b: 0.5478883, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,6 +86,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1222906146
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18623488}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.36, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.22811997
+--- !u!114 &1222906147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18623488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22ebf20765702949b8bca6f63b0c42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2637863329726935539
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,16 +123,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7328139770197185987}
-  - component: {fileID: 7844066299329184862}
+  - component: {fileID: -5068526303697236389}
   - component: {fileID: 284367007247046509}
   - component: {fileID: 1146384465626446926}
   - component: {fileID: 1146384465626446925}
   - component: {fileID: 1146384465626446919}
   - component: {fileID: 1146384465626446920}
   - component: {fileID: 1146384465626446921}
-  - component: {fileID: 546663658}
+  - component: {fileID: 501180363}
   m_Layer: 8
-  m_Name: RangedEnemy
+  m_Name: AggressiveEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +155,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7844066299329184862
+--- !u!114 &-5068526303697236389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,16 +164,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2637863329726935539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f212c64a73fca3a40b76c26935e39b6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 906c25cdb1fb59341b989601d1c090e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 4
   target: {fileID: 0}
-  rotateSpeed: 200
-  bulletPrefab: {fileID: 5231070670449638890, guid: 9c1cc3a49fe7a0f4b96c8749494625db, type: 3}
-  range: 5
-  firePoint: {fileID: 5787017584119639582}
-  secondsBetweenFire: 2
+  findRadius: 4
+  damage: 1
+  attackableThings:
+    serializedVersion: 2
+    m_Bits: 12800
+  scannAreaCenter: {fileID: 7328139770197185987}
+  threshold: 1.5
+  secondsBetweenAttack: 2
 --- !u!114 &284367007247046509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2abb101f35197478ad9ed7110e6888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 3
   blinkSecond: 0.1
   freezeSecond: 0.5
 --- !u!50 &1146384465626446926
@@ -194,7 +227,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.1278704, y: 1.5993913}
+  m_Size: {x: 0.81, y: 1.62}
   m_Direction: 0
 --- !u!114 &1146384465626446919
 MonoBehaviour:
@@ -221,7 +254,7 @@ MonoBehaviour:
   repathRateCompatibility: NaN
   canSearchCompability: 0
   orientation: 1
-  enableRotation: 0
+  enableRotation: 1
   autoRepath:
     mode: 2
     interval: 0.5
@@ -280,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!95 &546663658
+--- !u!95 &501180363
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -290,7 +323,7 @@ Animator:
   m_GameObject: {fileID: 2637863329726935539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0e3cac49a1b54a4fb2b63634bc9ea5a, type: 2}
+  m_Controller: {fileID: 9100000, guid: cc3cd76bc6a5cc94591cd7d9d35f8d22, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

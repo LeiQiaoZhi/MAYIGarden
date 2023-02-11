@@ -7,8 +7,7 @@ using UnityEngine;
 public class RangedAttack : EnemyAttack
 {
     public float rotateSpeed;
-    [Header("Shoot")]
-    public GameObject bulletPrefab;
+    [Header("Shoot")] public GameObject bulletPrefab;
     public float range;
     public Transform firePoint;
     public float secondsBetweenFire;
@@ -25,15 +24,13 @@ public class RangedAttack : EnemyAttack
     {
         if (target)
         {
-            var bullet = Instantiate(bulletPrefab,firePoint.position,transform.rotation);
+            var bullet = Instantiate(bulletPrefab, firePoint.position, transform.rotation);
         }
     }
-
- 
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,range);
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
