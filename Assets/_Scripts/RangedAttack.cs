@@ -6,14 +6,12 @@ using UnityEngine;
 
 public class RangedAttack : EnemyAttack
 {
+    public float rotateSpeed;
     [Header("Shoot")]
     public GameObject bulletPrefab;
     public float range;
     public Transform firePoint;
     public float secondsBetweenFire;
-    [Header("Movement to target")]
-    public Transform target;
-    public float rotateSpeed;
 
 
     public override void Start()
@@ -31,13 +29,7 @@ public class RangedAttack : EnemyAttack
         }
     }
 
-    public void SetTarget(Transform newTarget)
-    {
-        target = newTarget;
-        // resume moving
-        aiPath.maxSpeed = maxSpeed;
-        destinationSetter.target = target;
-    }
+ 
 
     private void OnDrawGizmos()
     {

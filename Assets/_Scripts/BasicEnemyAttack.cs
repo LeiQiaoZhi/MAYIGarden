@@ -6,8 +6,8 @@ using Pathfinding;
 
 public class BasicEnemyAttack : EnemyAttack
 {
-    public float stopThreshold = 0.2f;
 
+    [Header("Attack")]
     public float secondsBetweenAttacks = 1f;
     public int attackDamage = 1;
 
@@ -15,8 +15,9 @@ public class BasicEnemyAttack : EnemyAttack
     public override void Start()
     {
         base.Start();
-        // find root and assign it as target
-        destinationSetter.target = FindObjectOfType<Root>().transform;
+        // find root and assign it as targe
+        Transform rootTrans = FindObjectOfType<Root>().transform;
+        SetTarget(rootTrans);
     }
 
     // Update is called once per frame
@@ -29,8 +30,8 @@ public class BasicEnemyAttack : EnemyAttack
             Debug.LogWarning("Detect Root");
             // stop and attack
             _attacking = true;
-            StartCoroutine(AttackCoroutine(destinationSetter.target));
-            destinationSetter.enabled = false;
+            StartCoroutine(AttackCoroutine(target));
+            Stop();
         }
     }
 
@@ -39,7 +40,7 @@ public class BasicEnemyAttack : EnemyAttack
         if (_attacking && other.CompareTag("Root"))
         {
             _attacking = false;
-            destinationSetter.enabled = true;
+            Resume();
         }
     }
 

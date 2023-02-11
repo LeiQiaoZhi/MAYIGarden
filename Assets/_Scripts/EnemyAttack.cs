@@ -4,7 +4,10 @@ using Pathfinding;
 
 public class EnemyAttack : MonoBehaviour
 {
+    [Header("Movement to target")]
     [SerializeField] protected float maxSpeed;
+    public Transform target;
+    
     protected AIDestinationSetter destinationSetter;
     protected AIPath aiPath;
 
@@ -23,5 +26,13 @@ public class EnemyAttack : MonoBehaviour
         aiPath = GetComponent<AIPath>();
         destinationSetter = GetComponent<AIDestinationSetter>();
         Resume();
+    }
+
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+        // resume moving
+        aiPath.maxSpeed = maxSpeed;
+        destinationSetter.target = target;
     }
 }
