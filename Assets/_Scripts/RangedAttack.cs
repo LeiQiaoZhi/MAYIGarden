@@ -6,6 +6,7 @@ public class RangedAttack : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float range;
+    public float secondsBetweenFire;
 
     public void RangeAttack()
     {
