@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Turret : MonoBehaviour
 {
     public float detectRadius = 5f;
@@ -11,48 +12,50 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
 
     private float fireTime = 0f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Rigidbody2D _rb;
 
-     Transform target;
+
+    Transform _target;
     public float minAngleToClampSpeed = 10;
+
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
         // Rotate the turret towards the target if there is any
-        if (target)
+        if (_target)
         {
-            if (Vector2.Distance(target.position, transform.position) > detectRadius)
+            if (Vector2.Distance(_target.position, transform.position) > detectRadius)
             {
-                target = null;
+                _target = null;
                 return;
             }
-            Vector3 direction = (target.position - transform.position).normalized;
+
+            var direction = (Vector2)(_target.position - transform.position).normalized;
+            float rotateAmount = Vector3.Cross(direction, transform.right).z;
+            _rb.angularVelocity = -rotateAmount * rotateSpeed;
+            
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
-            Debug.Log($"target: {targetAngle}");
-            Debug.Log($"z: {transform.rotation.eulerAngles.z}");
-            Debug.Log(targetAngle-transform.rotation.eulerAngles.z);
             float angleDiff = (targetAngle - transform.rotation.eulerAngles.z);
             if (transform.rotation.eulerAngles.z > 180)
             {
                 angleDiff += 360;
             }
-
-            float rotateIncrement = angleDiff * Time.deltaTime * rotateSpeed;
-            if (Mathf.Abs(rotateIncrement) < minAngleToClampSpeed * rotateSpeed * Time.deltaTime)
-            {
-                rotateIncrement = Mathf.Sign(rotateIncrement) * minAngleToClampSpeed * rotateSpeed * Time.deltaTime;
-            }
-
-            transform.Rotate(Vector3.forward,rotateIncrement);
+            //
+            // float rotateIncrement = angleDiff * Time.deltaTime * rotateSpeed;
+            // if (Mathf.Abs(rotateIncrement) < minAngleToClampSpeed * rotateSpeed * Time.deltaTime)
+            // {
+            //     rotateIncrement = Mathf.Sign(rotateIncrement) * minAngleToClampSpeed * rotateSpeed * Time.deltaTime;
+            // }
+            //
+            // transform.Rotate(Vector3.forward,rotateIncrement);
             // transform.rotation = Quaternion.AngleAxis(Mathf.Lerp(), Vector3.forward);
 
             // Fire a bullet if the fire rate time has passed
-            if (Time.time >= fireTime && Mathf.Abs(angleDiff)<1)
+            if (Time.time >= fireTime && Mathf.Abs(angleDiff) < 5)
             {
                 fireTime = Time.time + secondsBetweenFire;
                 Instantiate(bulletPrefab, transform.position, transform.rotation);
@@ -67,13 +70,11 @@ public class Turret : MonoBehaviour
                 if (hit.CompareTag("Enemy"))
                 {
                     Debug.LogWarning("Target Acquired");
-                    target = hit.transform;
+                    _target = hit.transform;
                     break;
                 }
             }
-            
         }
-
     }
 
     private void OnDrawGizmos()
@@ -82,4 +83,3 @@ public class Turret : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectRadius);
     }
 }
-
