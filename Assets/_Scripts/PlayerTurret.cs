@@ -19,8 +19,9 @@ public class PlayerTurret : MonoBehaviour
     {
         if (Input.GetKeyDown(placeKey)&&_turretCount>0)
         {
+            Debug.LogWarning("Placing Turret");
             // place turret
-            GameObject turret = (turretPrefab);
+            GameObject turret = Instantiate(turretPrefab);
             turret.transform.position = transform.position;
             _turretCount -= 1;
         }

@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3859217117193867341}
   - component: {fileID: 3859217117193867340}
+  - component: {fileID: 4522370810564585236}
   m_Layer: 0
   m_Name: TurretNutrient
   m_TagString: Untagged
@@ -133,3 +134,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4522370810564585236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859217117193867342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23543bfcac650fc4d956cc42a538dbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

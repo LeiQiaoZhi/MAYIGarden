@@ -10,7 +10,7 @@ public class LifeNutrient : Nutrient
 
     private void Awake()
     {
-        _rootHealth = GetComponent<Root>();
+        _rootHealth = FindObjectOfType<Root>();
     }
 
     public override void OnTriggerWithPlayer(GameObject player)
