@@ -435,7 +435,7 @@ MonoBehaviour:
   verticalSprite: {fileID: -1350236259, guid: 8f6a88b3a68e26349a3b7eb202577000, type: 3}
   myRigidbody: {fileID: 1684411819299273207}
   attackCentreDist: 1
-  mySpeed: 1.15
+  mySpeed: 10
 --- !u!114 &586953479
 MonoBehaviour:
   m_ObjectHideFlags: 0

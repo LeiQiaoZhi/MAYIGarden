@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: -597526799
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: -9095717837082945937, guid: 07f1800bf985afb42885769f0e5e2ae7, type: 3}
-  m_Color: {r: 0.23896402, g: 0.34221026, b: 0.4245283, a: 1}
+  m_Sprite: {fileID: 1991352429, guid: 936b0e52ed58c894f96d3019b7a146c1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8558624565868087375}
   - component: {fileID: 8558624565868087374}
   - component: {fileID: 7030341185511170154}
+  - component: {fileID: 2364324104856234315}
   m_Layer: 0
   m_Name: TunnelNutrient
   m_TagString: Untagged
@@ -111,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 8558624565868087372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.71, y: -7.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.50503, y: 0.50503, z: 0.50503}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8558624563898166952}
@@ -125,7 +126,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558624565868087372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -147,3 +148,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tm: {fileID: 0}
+--- !u!60 &2364324104856234315
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8558624565868087372}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.769969, y: 1.4691997}
+      - {x: -0.22906685, y: 0.08247185}
+      - {x: -1.2157335, y: -0.521106}
+      - {x: -1.2855697, y: -1.31431}
+      - {x: -0.6268501, y: -1.3234315}
+      - {x: 0.03437102, y: -0.44809413}
+      - {x: 1.4443178, y: 1.0188322}
