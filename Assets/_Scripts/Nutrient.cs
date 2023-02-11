@@ -10,8 +10,8 @@ public abstract class Nutrient : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             OnTriggerWithPlayer(col.gameObject);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     public abstract void OnTriggerWithPlayer(GameObject player);

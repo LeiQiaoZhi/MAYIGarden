@@ -16,10 +16,10 @@ TagManager:
   - UI
   - Post
   - Obstacles
-  - MovableEntities
-  - 
-  - 
-  - 
+  - Enemies
+  - Player
+  - Bullets
+  - Borders
   - 
   - 
   - 

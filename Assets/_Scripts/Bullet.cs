@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     public LayerMask layersToDestroyIt;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
