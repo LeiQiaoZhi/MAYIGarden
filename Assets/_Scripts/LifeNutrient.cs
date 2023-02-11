@@ -13,7 +13,7 @@ public class LifeNutrient : Nutrient
         _rootHealth = GetComponent<Root>();
     }
 
-    public override void OnTriggerWithPlayer()
+    public override void OnTriggerWithPlayer(GameObject player)
     {
         Debug.LogWarning($"Life Nutrient is picked up by player. Restore {restoreHealth} health to root");
         _rootHealth.ChangeHealth(restoreHealth,gameObject);
