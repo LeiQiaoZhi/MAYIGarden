@@ -49,19 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverEvent: {fileID: 11400000, guid: 00254324067893740b9de63c573f1711, type: 2}
-  waves:
-  - waveName: Wave 1
-    enemies:
-    - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 2
-    averageSecondsBetweenSpawns: 2
-    secondsBeforeSpawn: 1
-  - waveName: Wave 2
-    enemies:
-    - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 4
-    averageSecondsBetweenSpawns: 1
-    secondsBeforeSpawn: 4
+  plantSpriteRender: {fileID: 0}
+  levelInfo: {fileID: 11400000, guid: d56c27507f3f7464b86bffdccc0ce8e3, type: 2}
   spawnPoints:
   - {fileID: 3956286319859324124}
   - {fileID: 3956286319382068668}
