@@ -85,6 +85,15 @@ public class playerMovement : MonoBehaviour
         spriteRenderer.transform.Translate(-distance, 0, 0);
         spriteRenderer.transform.localScale = originalScale;
     }
+
+    public void freezePos()
+    {
+        myRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+    }
+    public void UnfreezePos()
+    {
+        myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
     private void flipDir(string direction)
     {
         Vector2 localScale = gameObject.transform.localScale;
@@ -122,7 +131,6 @@ public class playerMovement : MonoBehaviour
             spriteRenderer.sprite = verticalSprite;
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.LogWarning("Player collided with something");
