@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee8dffb3426e43241bfcdb574fd6ac7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &300852935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2917869662212630879, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
+  m_PrefabInstance: {fileID: 440616394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &341366685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4344630199659080556, guid: 235160131561a22488b82f8496e891da, type: 3}
@@ -152,11 +157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1607175805557868204, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.18
+      value: 4.58
       objectReference: {fileID: 0}
     - target: {fileID: 1607175805557868204, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.07
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 1607175805557868204, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -192,11 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917869662212630879, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
       propertyPath: m_Name
-      value: Destructable Rock
+      value: RockDestructable
       objectReference: {fileID: 0}
     - target: {fileID: 2917869662212630879, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8073855330839570973, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
       propertyPath: m_Enabled
@@ -286,7 +291,8 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 0.58478224
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7438748852332505866, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
 --- !u!1 &620384059
 GameObject:
@@ -545,8 +551,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1457656477}
   - component: {fileID: 1457656478}
-  m_Layer: 0
-  m_Name: destructableRockSprite
+  m_Layer: 12
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,7 +615,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: befb3ccf20af6cf4d984e6427592f876, type: 3}
-  m_Color: {r: 0.7254902, g: 0.59120995, b: 0.36078432, a: 1}
+  m_Color: {r: 0.5360124, g: 0.3513112, b: 0.5849056, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -735,6 +741,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1607175805557868204, guid: 54821b4ef8406e24a9902a86eb1f7b7a, type: 3}
   m_PrefabInstance: {fileID: 440616394}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1883760066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300852935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6667aef8b08077843a38bd4df8448ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  halfDestructedRock: {fileID: -2413806693520163455, guid: 1a86b6abc50d9514097d0331fb434513, type: 3}
+  spriteRenderer: {fileID: 1457656478}
 --- !u!1 &2116675721
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,10 +851,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 586953479, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
-      propertyPath: myHealth
-      value: 
-      objectReference: {fileID: 586953480, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
     - target: {fileID: 1684411819299273205, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
       propertyPath: m_RootOrder
       value: 10
