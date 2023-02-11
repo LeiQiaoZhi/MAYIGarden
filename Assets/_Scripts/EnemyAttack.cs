@@ -7,26 +7,23 @@ using Pathfinding;
 public class EnemyAttack : MonoBehaviour
 {
     public float stopThreshold = 0.2f;
-    
+
     public float secondsBetweenAttacks = 1f;
     public int attackDamage = 1;
-    
+
     private AIDestinationSetter _destinationSetter;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         _destinationSetter = GetComponent<AIDestinationSetter>();
-        
+
         // find root and assign it as target
         _destinationSetter.target = FindObjectOfType<Root>().transform;
     }
 
     // Update is called once per frame
     private bool _attacking;
-    void Update()
-    {
-    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -36,10 +33,10 @@ public class EnemyAttack : MonoBehaviour
             // stop and attack
             _attacking = true;
             StartCoroutine(AttackCoroutine(_destinationSetter.target));
-            _destinationSetter.enabled = false; 
+            _destinationSetter.enabled = false;
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (_attacking && other.CompareTag("Root"))
@@ -57,8 +54,6 @@ public class EnemyAttack : MonoBehaviour
             yield return new WaitForSeconds(secondsBetweenAttacks);
         }
     }
-
-
 
     // ReSharper disable Unity.PerformanceAnalysis
     void Attack(Transform target)
