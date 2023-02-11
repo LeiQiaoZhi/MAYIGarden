@@ -136,6 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  blinkSecond: 0.1
+  freezeSecond: 0.2
 --- !u!50 &1146384465626446926
 Rigidbody2D:
   serializedVersion: 4

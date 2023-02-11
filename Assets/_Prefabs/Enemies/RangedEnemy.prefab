@@ -139,8 +139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5231070670449638890, guid: 9c1cc3a49fe7a0f4b96c8749494625db, type: 3}
   range: 5
+  firePoint: {fileID: 0}
   secondsBetweenFire: 2
   target: {fileID: 0}
+  rotateSpeed: 0
   maxSpeed: 5
 --- !u!114 &284367007247046509
 MonoBehaviour:
@@ -155,6 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  blinkSecond: 0.1
+  freezeSecond: 0.2
 --- !u!50 &1146384465626446926
 Rigidbody2D:
   serializedVersion: 4
