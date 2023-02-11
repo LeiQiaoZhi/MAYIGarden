@@ -39,15 +39,31 @@ public class playerHealth: Health
 
         // stop player motion for 5 seconds, flashing, and continue moving after.
         movement_manager.mySpeed= 0;
-        StartCoroutine(Fade(normalSpeed));  
+        StartCoroutine(dieAndRotate(6,normalSpeed));  
     }
 
     private IEnumerator Fade(float curr_speed)
     {
-        yield return new WaitForSeconds(5f); //<-- put how many seconds to wait here
+        float degreesPerSecond = 60;
+        gameObject.transform.Rotate(new Vector3(0, 0,degreesPerSecond) * Time.deltaTime);
+        yield return new WaitForSeconds(6f); //<-- put how many seconds to wait here
         movement_manager.mySpeed = curr_speed;
         Debug.LogWarning(movement_manager.mySpeed);
+        
+    }
 
+    private IEnumerator dieAndRotate(float duration, float curr_speed)
+    {
+        float degreesPerSecond = 60;
+        float t = 0.0f;
+        while(t < duration)
+        {
+            t += Time.deltaTime;
+            gameObject.transform.Rotate(new Vector3(0, 0, degreesPerSecond) * Time.deltaTime);
+            yield return null;
+        }
+        movement_manager.mySpeed = curr_speed;
+        Debug.LogWarning(movement_manager.mySpeed);
     }
 
 }
