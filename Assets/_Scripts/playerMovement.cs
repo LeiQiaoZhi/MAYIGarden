@@ -13,47 +13,48 @@ public class playerMovement : MonoBehaviour
     public Sprite horizontalSprite;
     public Sprite verticalSprite;
     public Rigidbody2D myRigidbody;
+    // isRight means the key board tells to move right, when moving left, isRight = -1
     private int isRight=1;
+    // similar for isUp
     private int isUp=1;
     public float attackCentreDist = 1;
     [Range(0, 40)][SerializeField] public float mySpeed = 10;
-    //private Vector2 currentVelocity = Vector2.zero;
-    //private Vector2 targetVelocity = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
     {
-        // start script is only run once
         gameObject.name = "Hanson";
     }
-
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space) == true)
-        //{
-        //    targetVelocity = Vector2.up * flapStrength;
-        //    myRigidbody.velocity = Vector2.SmoothDamp(myRigidbody.velocity, targetVelocity, ref currentVelocity, myMovementSmoothing);
-        //}
+        //Get motion value from keys
         float horizontalValue = Input.GetAxisRaw("Horizontal");
         float verticalValue = Input.GetAxisRaw("Vertical");
 
+        // the initial velocity in each frame is zero
         Vector2 currentVelocity = Vector2.zero;
+        //if there is horizontal movement
         if (horizontalValue != 0)
         {   
+            //add the horizontal velocity to current velocity
             currentVelocity += mySpeed * Vector2.right * horizontalValue;
+            // if the horizontal movement input is in opposite to the direction facing
             if (horizontalValue * isRight < 0)
             {
+                //change direction of facing
                 flipDir("Horizontal");
+                // now moves to opposite direction
                 isRight = -isRight;
             }
+            //if the ant sprite is previously vertical
             if(spriteRenderer.sprite != horizontalSprite)
             {
                 changeSprite("Horizontal");
             }
         }
+        //else is added as we dont want the ant to move diagonally
         else
-        {
+        {   
             if (verticalValue != 0)
             {
                 currentVelocity += mySpeed * Vector2.up * verticalValue;
@@ -108,6 +109,7 @@ public class playerMovement : MonoBehaviour
         gameObject.transform.localScale= localScale;
     }
 
+    //!!! I added change scanAreaCentre in this function
     private void changeSprite(string direction)
     {
         Vector2 localScale = gameObject.transform.localScale;//hard code to avoided inverted sprite when moving.
@@ -120,7 +122,8 @@ public class playerMovement : MonoBehaviour
             //   gameObject.transform.localScale = localScale;
             //}
 
-            // Change direction of attack centre
+            // Change direction of attack centre when changing to horizontal motion
+            //I multiply by localScale.x as it accounts for left/right.
             scanAreaCentre.position = gameObject.transform.position + attackCentreDist * Vector3.right * localScale.x;
             spriteRenderer.sprite = horizontalSprite;
         }
