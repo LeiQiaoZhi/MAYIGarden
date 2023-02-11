@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public int damage;
     public float lifeTime = 10f;
+    public LayerMask layersToDestroyIt;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +29,7 @@ public class Bullet : MonoBehaviour
             health.ChangeHealth(-damage, gameObject);
         }
 
-        if (_colGameObject.CompareTag("Enemy")
-            || _colGameObject.CompareTag("Obstacle"))
+        if(LayerMaskHelper.IsInLayerMask(_colGameObject.layer,layersToDestroyIt))
         {
             Destroy(gameObject);
         }

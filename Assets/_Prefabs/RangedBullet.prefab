@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 1a86b6abc50d9514097d0331fb434513, type: 3}
-  m_Color: {r: 0.41960788, g: 0.8862746, b: 0.41960788, a: 1}
+  m_Color: {r: 1, g: 0.75, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2986625668290492196}
   - component: {fileID: 3818749043524608897}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: RangedBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
