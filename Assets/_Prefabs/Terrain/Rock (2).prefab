@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7438748852332505866}
   - component: {fileID: 4912344463114865988}
   - component: {fileID: 8073855330839570973}
-  m_Layer: 0
-  m_Name: Rock
+  m_Layer: 7
+  m_Name: Rock (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2917869662212630879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.61629, y: 2.1494863, z: 1.458051}
+  m_LocalScale: {x: 1, y: 1, z: 1.458051}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,11 +72,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -597526799
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: befb3ccf20af6cf4d984e6427592f876, type: 3}
-  m_Color: {r: 0.7254902, g: 0.59120995, b: 0.36078432, a: 1}
+  m_Sprite: {fileID: 1973142563, guid: 8f6a88b3a68e26349a3b7eb202577000, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,7 +124,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.6899998, y: 4.881663}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -132,11 +132,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.6669505, y: 0.5436176}
-      - {x: -0.69374883, y: 0.1200628}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.059985276, y: -0.6590885}
-      - {x: 0.5, y: -0.5}
-      - {x: 1.05724, y: -0.28388047}
-      - {x: 1.3087035, y: 0.04857286}
-      - {x: -0.030070245, y: 1.254009}
+    - - {x: -0.8425112, y: 2.1089015}
+      - {x: -0.804266, y: -0.18184185}
+      - {x: -1.0777884, y: -1.4851204}
+      - {x: -0.42682076, y: -2.2539387}
+      - {x: 0.11015135, y: -2.3105955}
+      - {x: 0.813241, y: -1.8779467}
+      - {x: 1.0483571, y: -1.140647}
+      - {x: 0.96213055, y: 0.14300966}
+      - {x: 0.62852955, y: 0.5060719}
+      - {x: 0.26135594, y: 1.9587811}
+      - {x: -0.34714887, y: 2.3692749}
