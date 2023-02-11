@@ -17,11 +17,12 @@ public class playerAttack : MonoBehaviour
     public float attackAnimateTime = 0.5f;
     public float attackAnimateScale = 1.5f;
     public KeyCode attackKey = KeyCode.J;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,9 +33,11 @@ public class playerAttack : MonoBehaviour
             // When the player is attacking
 
             // Added movement animation 
-            StartCoroutine(myMovement.AttackAnimate(attackDist,attackAnimateTime,attackAnimateScale));
+            // StartCoroutine(myMovement.AttackAnimate(attackDist,attackAnimateTime,attackAnimateScale));
+            animator.SetTrigger("Attack");
 
-            nextAttackTime= Time.time + secondsBetweenAttacks;
+
+            nextAttackTime = Time.time + secondsBetweenAttacks;
             //1. find all enemies in the radius
             Debug.Log("Player trying to attack");
             Collider2D[] hits = Physics2D.OverlapCircleAll(scanAreaCentre.position, scanAreaRadius, targetLayers);
@@ -62,6 +65,7 @@ public class playerAttack : MonoBehaviour
             health.ChangeHealth(-playerAttackDamage, gameObject);
         }
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
