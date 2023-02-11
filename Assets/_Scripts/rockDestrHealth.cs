@@ -10,6 +10,8 @@ public class rockDestrHealth : Health
     private GameManager _gameManager;
     public Sprite halfDestructedRock;
     public SpriteRenderer spriteRenderer;
+    public PolygonCollider2D origCol;
+    public PolygonCollider2D halfDestructedCol;
     private void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
@@ -23,6 +25,7 @@ public class rockDestrHealth : Health
         if (_currentHealth <= maxHealth / 2)
         {
             changeSprite(halfDestructedRock);
+            changeCollider();
         }
          
         
@@ -36,5 +39,11 @@ public class rockDestrHealth : Health
     private void changeSprite(Sprite targetSprite)
     {
         spriteRenderer.sprite = targetSprite;
+    }
+
+    private void changeCollider() 
+    {
+        origCol.enabled= false;
+        halfDestructedCol.enabled= true;
     }
 }
