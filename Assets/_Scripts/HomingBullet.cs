@@ -52,7 +52,7 @@ public class HomingBullet : Bullet
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(scannAreaCenter.position, scanAreaRadius);
     }
 }

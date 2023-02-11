@@ -242,7 +242,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elements_6
+      name: red_bug
       rect:
         serializedVersion: 2
         x: 184
@@ -263,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elements_7
+      name: red_bug_limbs
       rect:
         serializedVersion: 2
         x: 95
@@ -505,12 +505,12 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       elements_17: -274375823
-      elements_7: -705977417
+      red_bug_limbs: -705977417
+      red_bug: -336071624
       rock2: 1973142563
       elements_12: 1439834547
-      elements_6: -336071624
-      elements_13: -1408426933
       rock1_broken: -1137968958
+      elements_13: -1408426933
       rock: 187324832
       elements_16: 1733419486
       rock2_broken: -969843313
