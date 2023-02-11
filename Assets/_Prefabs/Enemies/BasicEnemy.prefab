@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 18623489}
   - component: {fileID: 18623490}
+  - component: {fileID: 4320647610771421247}
+  - component: {fileID: 1342862337}
   m_Layer: 8
-  m_Name: Isometric Diamond
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +86,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4320647610771421247
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18623488}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5000001
+--- !u!114 &1342862337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18623488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22ebf20765702949b8bca6f63b0c42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2637863329726935539
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,12 +124,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7328139770197185987}
   - component: {fileID: 284367007247046509}
-  - component: {fileID: 1146384465626446924}
+  - component: {fileID: 1126862180048135794}
   - component: {fileID: 1146384465626446926}
   - component: {fileID: 1146384465626446925}
   - component: {fileID: 1146384465626446919}
   - component: {fileID: 1146384465626446920}
   - component: {fileID: 1146384465626446921}
+  - component: {fileID: 2070166422}
   m_Layer: 8
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -138,7 +169,7 @@ MonoBehaviour:
   maxHealth: 2
   blinkSecond: 0.1
   freezeSecond: 0.5
---- !u!114 &1146384465626446924
+--- !u!114 &1126862180048135794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,13 +178,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2637863329726935539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ffc3e824f47fc4194ede8efaa1c9cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 906c25cdb1fb59341b989601d1c090e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 3
-  stopThreshold: 1
-  secondsBetweenAttacks: 1
-  attackDamage: 1
+  target: {fileID: 0}
+  findRadius: 0
+  damage: 1
+  attackableThings:
+    serializedVersion: 2
+    m_Bits: 8192
+  scannAreaCenter: {fileID: 7328139770197185987}
+  threshold: 1
+  secondsBetweenAttack: 2
 --- !u!50 &1146384465626446926
 Rigidbody2D:
   serializedVersion: 4
@@ -189,7 +226,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 0.35910434, y: 0.69035673}
   m_Direction: 0
 --- !u!114 &1146384465626446919
 MonoBehaviour:
@@ -275,3 +312,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!95 &2070166422
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637863329726935539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc3cd76bc6a5cc94591cd7d9d35f8d22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

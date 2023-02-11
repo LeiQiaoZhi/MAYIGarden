@@ -169,10 +169,10 @@ MonoBehaviour:
   lifeTime: 10
   layersToDestroyIt:
     serializedVersion: 2
-    m_Bits: 7808
+    m_Bits: 16000
   targetLayers:
     serializedVersion: 2
-    m_Bits: 4608
+    m_Bits: 12800
   scannAreaCenter: {fileID: 9046107998248337897}
   scanAreaRadius: 2
   homingRadius: 3

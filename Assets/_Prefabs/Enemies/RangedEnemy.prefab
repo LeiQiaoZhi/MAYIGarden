@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f212c64a73fca3a40b76c26935e39b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 2
   target: {fileID: 0}
   rotateSpeed: 200
   bulletPrefab: {fileID: 5231070670449638890, guid: 9c1cc3a49fe7a0f4b96c8749494625db, type: 3}
@@ -194,7 +194,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.1278704, y: 1.5993913}
+  m_Size: {x: 0.5314379, y: 1.0833471}
   m_Direction: 0
 --- !u!114 &1146384465626446919
 MonoBehaviour:

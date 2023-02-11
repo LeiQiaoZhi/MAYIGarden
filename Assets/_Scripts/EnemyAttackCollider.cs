@@ -28,13 +28,17 @@ public class EnemyAttackCollider : MonoBehaviour
     {
         _attackCollider.enabled = false;
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (LayerMaskHelper.IsInLayerMask(col.gameObject.layer, _attackableMask))
         {
             Debug.LogWarning($"Hit {col.gameObject.name}");
             Health health = col.GetComponent<Health>();
-            health.ChangeHealth(-_damage,transform.parent.gameObject);
+            if (health)
+            {
+                health.ChangeHealth(-_damage, transform.parent.gameObject);
+            }
         }
     }
 }

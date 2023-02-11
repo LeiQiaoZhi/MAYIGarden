@@ -40,7 +40,6 @@ public class AggressiveEnemy : EnemyAttack
             {
                 Debug.LogWarning($"Attacking {target.name}");
                 _animator.SetTrigger("Attack");
-                _attackCollider.TurnOn(attackableThings,damage);
                 // collision detection is done at Sprite object
                 _fireTime = Time.time + secondsBetweenAttack;
             }
@@ -49,6 +48,16 @@ public class AggressiveEnemy : EnemyAttack
         {
             Resume();
         }
+    }
+
+    public void TurnOnAttackCollider()
+    {
+        _attackCollider.TurnOn(attackableThings, damage);
+    }
+
+    public void TurnOffAttackCollider()
+    {
+        _attackCollider.TurnOff();
     }
 
     void FindTarget()

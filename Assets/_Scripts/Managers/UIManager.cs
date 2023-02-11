@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject levelEndScreen;
     [SerializeField] GameObject pauseScreen;
+    [SerializeField] Slider healthSlider;
 
     private void Awake()
     {
@@ -22,6 +23,11 @@ public class UIManager : MonoBehaviour
     public void SetEnableLevelEndScreen(bool enable)
     {
         levelEndScreen.SetActive(enable);
+    }
+
+    public void UpdateHealthSlider(int health, int maxHealth)
+    {
+        healthSlider.value = (health / (float)maxHealth);
     }
 
 

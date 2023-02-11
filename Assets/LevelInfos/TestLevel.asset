@@ -24,17 +24,21 @@ MonoBehaviour:
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
       enemyNumber: 4
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      enemyNumber: 2
     averageSecondsBetweenSpawns: 2
     secondsBeforeSpawn: 4
     plantSpriteIndex: 1
   - waveName: Wave 3
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 6
+      enemyNumber: 4
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 8234ab6f5f355a949ba928421c42f309, type: 3}
+      enemyNumber: 4
     averageSecondsBetweenSpawns: 1
     secondsBeforeSpawn: 4
     plantSpriteIndex: 2
   spritesForPlantStages:
-  - {fileID: 21300000, guid: affeade9874cf2347abb155e8d0db4d8, type: 3}
-  - {fileID: 21300000, guid: 0029170d14ce6c04c9f45c22cdae5559, type: 3}
-  - {fileID: 21300000, guid: 36e6970b84831434a9eac79abd03700b, type: 3}
+  - {fileID: -1674399870, guid: 45f3c19afdb0d104ba441e4a2088c181, type: 3}
+  - {fileID: -802046862, guid: 45f3c19afdb0d104ba441e4a2088c181, type: 3}
+  - {fileID: -291044671, guid: 45f3c19afdb0d104ba441e4a2088c181, type: 3}

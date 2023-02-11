@@ -12,13 +12,13 @@ public class EnemyHealth : Health
     // ReSharper disable Unity.PerformanceAnalysis
     public override void ChangeHealth(int change, GameObject from)
     {
-        base.ChangeHealth(change, from);
         // attacked feedback
         if (change < 0)
         {
             StartCoroutine(Attacked());
             StartCoroutine(Freeze());
         }
+        base.ChangeHealth(change, from);
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
