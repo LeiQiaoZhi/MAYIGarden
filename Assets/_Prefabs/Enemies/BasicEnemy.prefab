@@ -169,6 +169,7 @@ MonoBehaviour:
   maxHealth: 2
   blinkSecond: 0.1
   freezeSecond: 0.5
+  enemyDeathEvent: {fileID: 11400000, guid: 367b3e50d8fe5ad42a6b06db22c7f32c, type: 2}
 --- !u!114 &1126862180048135794
 MonoBehaviour:
   m_ObjectHideFlags: 0

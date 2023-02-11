@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80c40e7c788cc94b89eb0410c73f51a, type: 3}
   m_Name: EmptyLevel
   m_EditorClassIdentifier: 
-  waves: []
-  spritesForPlantStages: []
+  waves:
+  - waveName: 
+    enemies:
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
+      enemyNumber: 1
+    averageSecondsBetweenSpawns: 1
+    secondsBeforeSpawn: 0
+    plantSpriteIndex: 0
+  spritesForPlantStages:
+  - {fileID: -291044671, guid: 45f3c19afdb0d104ba441e4a2088c181, type: 3}

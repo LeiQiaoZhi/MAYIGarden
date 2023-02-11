@@ -7,6 +7,7 @@ public class EnemyHealth : Health
     [Tooltip("Seconds to blink if being attacked")]
     public float blinkSecond = 0.1f;
     public float freezeSecond = 0.1f;
+    [SerializeField] private GameEvent enemyDeathEvent;
 
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -48,6 +49,7 @@ public class EnemyHealth : Health
     protected override void Die()
     {
         Debug.Log($"{gameObject.name} has died.");
+        enemyDeathEvent.Raise();
         Destroy(gameObject);
     }
 }

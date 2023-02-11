@@ -19,9 +19,12 @@ public class GameManager : MonoBehaviour
     public List<Transform> spawnPoints;
 
     List<LevelInfoSO.Wave> _waves;
+    private bool spawnFinished = false;
+    private int _enemyCount = 0;
 
     private void Start()
     {
+        spawnFinished = false;
         _waves = levelInfo.waves;
         StartCoroutine(SpawnCoroutine());
     }
@@ -33,10 +36,10 @@ public class GameManager : MonoBehaviour
         {
             // new wave
             LevelInfoSO.Wave wave = _waves[index];
-            
+
             // change plant sprite
             plantSpriteRender.sprite = levelInfo.GetSpriteForWave(index);
-            
+
             // wait a few seconds before start spawning
             yield return new WaitForSeconds(wave.secondsBeforeSpawn);
 
@@ -69,8 +72,30 @@ public class GameManager : MonoBehaviour
             {
                 Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
                 Instantiate(enemyList[i], spawnPoint);
+                UpdateEnemyCount(1);
                 yield return new WaitForSeconds(wave.averageSecondsBetweenSpawns);
             }
+        }
+
+        spawnFinished = true;
+    }
+
+    public void UpdateEnemyCount(int change)
+    {
+        _enemyCount += change;
+        if (_enemyCount <= 0 && spawnFinished)
+        {
+            LevelFinish();
+        }
+    }
+
+    public void LevelFinish()
+    {
+        Debug.LogWarning("LEVEL FINISHED.");
+        Animator animator = Camera.main.GetComponent<Animator>();
+        if (animator)
+        {
+            animator.SetTrigger("LevelEnd");
         }
     }
 

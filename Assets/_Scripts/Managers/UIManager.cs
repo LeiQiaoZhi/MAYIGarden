@@ -30,7 +30,6 @@ public class UIManager : MonoBehaviour
         healthSlider.value = (health / (float)maxHealth);
     }
 
-
     public void DisplayAchievementUnlockMessage(int i)
     {
         AchievementManager achievementManager = AchievementManager.instance;
