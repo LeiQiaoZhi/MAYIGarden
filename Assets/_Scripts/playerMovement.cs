@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using UnityEditor.Tilemaps;
 using UnityEngine;
@@ -11,9 +12,9 @@ public class playerMovement : MonoBehaviour
     public Sprite horizontalSprite;
     public Sprite verticalSprite;
     public Rigidbody2D myRigidbody;
-    private int isRight=-1;
-    private int isUp=-1;
-    [Range(0, 40)][SerializeField] private float mySpeed = 10;
+    private int isRight=1;
+    private int isUp=1;
+    [Range(0, 40)][SerializeField] public float mySpeed = 10;
     //private Vector2 currentVelocity = Vector2.zero;
     //private Vector2 targetVelocity = Vector2.zero;
 
@@ -36,7 +37,6 @@ public class playerMovement : MonoBehaviour
         float verticalValue = Input.GetAxisRaw("Vertical");
 
         Vector2 currentVelocity = Vector2.zero;
-
         if (horizontalValue != 0)
         {   
             currentVelocity += mySpeed * Vector2.right * horizontalValue;
