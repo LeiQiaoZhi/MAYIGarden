@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
 
-public class RangedAttack : MonoBehaviour
+public class RangedAttack : EnemyAttack
 {
     [Header("Shoot")]
     public GameObject bulletPrefab;
@@ -14,16 +14,13 @@ public class RangedAttack : MonoBehaviour
     [Header("Movement to target")]
     public Transform target;
     public float rotateSpeed;
-    [SerializeField] private float maxSpeed;
-    
-    private AIDestinationSetter _aiDestinationSetter;
-    private AIPath _aiPath;
 
-    private void Start()
+
+    public override void Start()
     {
-        _aiPath = GetComponent<AIPath>();
-        _aiDestinationSetter = GetComponent<AIDestinationSetter>();
-        _aiPath.maxSpeed = maxSpeed;
+        base.Start();
+        aiPath = GetComponent<AIPath>();
+        destinationSetter = GetComponent<AIDestinationSetter>();
     }
 
     public void Shoot()
@@ -34,17 +31,12 @@ public class RangedAttack : MonoBehaviour
         }
     }
 
-    public void Stop()
-    {
-        _aiPath.maxSpeed = 0;
-    }
-
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
         // resume moving
-        _aiPath.maxSpeed = maxSpeed;
-        _aiDestinationSetter.target = target;
+        aiPath.maxSpeed = maxSpeed;
+        destinationSetter.target = target;
     }
 
     private void OnDrawGizmos()

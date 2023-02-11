@@ -24,13 +24,12 @@ public class EnemyHealth : Health
     // ReSharper disable Unity.PerformanceAnalysis
     IEnumerator Freeze()
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        Vector2 vel = rb.velocity;
-        rb.velocity = Vector2.zero;
+        EnemyAttack enemyAttack = GetComponent<EnemyAttack>();
 
+        enemyAttack.Stop();
         yield return new WaitForSeconds(freezeSecond);
 
-        rb.velocity = vel;
+        enemyAttack.Resume();
     }
 
     // ReSharper disable Unity.PerformanceAnalysis

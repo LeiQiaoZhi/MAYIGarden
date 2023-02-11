@@ -94,12 +94,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7328139770197185987}
   - component: {fileID: 284367007247046509}
+  - component: {fileID: 1146384465626446924}
   - component: {fileID: 1146384465626446926}
   - component: {fileID: 1146384465626446925}
   - component: {fileID: 1146384465626446919}
   - component: {fileID: 1146384465626446920}
   - component: {fileID: 1146384465626446921}
-  - component: {fileID: 1146384465626446924}
   m_Layer: 8
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -137,7 +137,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   blinkSecond: 0.1
-  freezeSecond: 0.2
+  freezeSecond: 0.5
+--- !u!114 &1146384465626446924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637863329726935539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ffc3e824f47fc4194ede8efaa1c9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 3
+  stopThreshold: 1
+  secondsBetweenAttacks: 1
+  attackDamage: 1
 --- !u!50 &1146384465626446926
 Rigidbody2D:
   serializedVersion: 4
@@ -259,18 +275,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!114 &1146384465626446924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2637863329726935539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ffc3e824f47fc4194ede8efaa1c9cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stopThreshold: 1
-  secondsBetweenAttacks: 1
-  attackDamage: 1
