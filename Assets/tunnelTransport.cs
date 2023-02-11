@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class tunnelTransport : MonoBehaviour
 {
+    [HideInInspector]
     public tunnelManager tm;// need to be private
+    [HideInInspector]
     public int id = 0; //need to be private
     public Vector3 targetPosition = new Vector3(0, 0, 0);
     public LayerMask targetLayers;

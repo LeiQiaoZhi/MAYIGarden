@@ -5,11 +5,11 @@ using UnityEngine;
 public class tunnelManager : MonoBehaviour
 {
     public int seedNum = 2;
-    public GameObject[] tunnelList = new GameObject[2];
-    public int tunnelNum = 0; //this will need to change to private later
+    private GameObject[] tunnelList = new GameObject[2];
+    private int tunnelNum = 0; //this will need to change to private later
     public GameObject tunnelPrefab;
-    public float coolDownTime = 3f;
-    public float nextTrasTime =0f; // potentially, the player may get transported when creating the portal
+    public float coolDownTime = 1.5f;
+    private float nextTrasTime =1f; // potentially, the player may get transported when creating the portal
 
 
     public Vector3 getTunnelPos(int id)
@@ -45,6 +45,7 @@ public class tunnelManager : MonoBehaviour
         else
         {
             seedNum -= 1;
+            nextTrasTime= Time.time + coolDownTime; // not transporting at first creation
             // instantiate a tunnel at pos
             GameObject newTunnel = Instantiate(tunnelPrefab, pos, Quaternion.identity);
             newTunnel.GetComponent<tunnelTransport>().tm = this;
