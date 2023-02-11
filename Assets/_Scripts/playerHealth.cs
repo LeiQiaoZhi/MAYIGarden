@@ -12,6 +12,8 @@ public class playerHealth: Health
     private float normalSpeed;
     public int rotPerSec = 240;
     public float dieRotTime = 3;
+    public float immuneTime = 1;
+    private bool immune = false;
 
     private void Awake()
     {
@@ -20,6 +22,10 @@ public class playerHealth: Health
 
     public override void ChangeHealth(int change, GameObject from)
     {
+        if (immune)
+        {
+            return;
+        }
         base.ChangeHealth(change, from);
 
         Debug.LogWarning("Player is being attacked");
@@ -41,6 +47,8 @@ public class playerHealth: Health
         // stop player motion for 6 seconds, flashing, and continue moving after.
         normalSpeed = movement_manager.mySpeed;
         movement_manager.mySpeed= 0;
+        immune= true;
+        Debug.Log("The player is immune now.");
         StartCoroutine(dieAndRotate(dieRotTime,normalSpeed));  
     }
 
@@ -54,7 +62,12 @@ public class playerHealth: Health
             yield return null;
         }
         movement_manager.mySpeed = curr_speed;
-        Debug.LogWarning(movement_manager.mySpeed);
+        Debug.Log(movement_manager.mySpeed);
+        _currentHealth = maxHealth;
+        Debug.Log("Restored Player Health to " + maxHealth);
+        yield return new WaitForSeconds(immuneTime);
+        immune = false;
+        Debug.Log("The player is now normal");
     }
 
 }
