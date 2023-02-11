@@ -123,8 +123,8 @@ TextureImporter:
         y: 1023
         width: 370
         height: 479
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.50805324, y: 0.5559849}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,6 +132,153 @@ TextureImporter:
       bones: []
       spriteID: a75f7b675c109a644ad18c535bc4929f
       internalID: -2121543978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthworm_0
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 655
+        width: 519
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdd323bcc18a2d49bf20d0794266e26
+      internalID: -298534753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthworm_1
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 798
+        width: 444
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc067785c2d37c44929b4b65843233b
+      internalID: 360992729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthworm_2
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 566
+        width: 191
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7631381b8bf384ababf420297e0b73
+      internalID: 2047253633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scorpion_0_limbs
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 196
+        width: 318
+        height: 394
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32606226}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8c3418fbd14574785d6a047000af98
+      internalID: 183428560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scorpion_0_body
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 170
+        width: 301
+        height: 429
+      alignment: 9
+      pivot: {x: 0.7672772, y: 0.55556476}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26b629a93286034da577c8c8ecebb42
+      internalID: 471815970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scorpion_1_limbs
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 187
+        width: 447
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02a5ded11571d642bcc97a8bcbb375d
+      internalID: 84136617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scorpian_1_body
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 214
+        width: 361
+        height: 408
+      alignment: 9
+      pivot: {x: 0.49174654, y: 0.18596978}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a235df6502c95ad459505db11072b98c
+      internalID: 2034098370
       vertices: []
       indices: 
       edges: []
@@ -147,7 +294,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      earthworm_2: 2047253633
+      scorpion_0_limbs: 183428560
+      "\u56DB\u6761\u817F\u7684\u8682\u8681_0": 2034098370
+      scorpion_0_body: 471815970
+      earthworm_0: -298534753
+      scorpion_1_limbs: 84136617
+      earthworm_1: 360992729
       4leg_limb_top: -2121543978
+      scorpian_1_body: 2034098370
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
