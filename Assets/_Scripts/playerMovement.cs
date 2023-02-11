@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class playerMovement : MonoBehaviour
 {
     //[Range(0, .3f)][SerializeField] private float myMovementSmoothing = .05f;
@@ -15,6 +16,8 @@ public class playerMovement : MonoBehaviour
     public Rigidbody2D myRigidbody;
     // isRight means the key board tells to move right, when moving left, isRight = -1
     private int isRight=1;
+
+    private Animator _animator;
     // similar for isUp
     private int isUp=1;
     public float attackCentreDist = 1;
@@ -23,6 +26,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         gameObject.name = "Hanson";
     }
     void Update()
@@ -42,14 +46,14 @@ public class playerMovement : MonoBehaviour
             if (horizontalValue * isRight < 0)
             {
                 //change direction of facing
-                flipDir("Horizontal");
+                // flipDir("Horizontal");
                 // now moves to opposite direction
                 isRight = -isRight;
             }
             //if the ant sprite is previously vertical
             if(spriteRenderer.sprite != horizontalSprite)
             {
-                changeSprite("Horizontal");
+                // changeSprite("Horizontal");
             }
         }
         //else is added as we dont want the ant to move diagonally
@@ -60,17 +64,20 @@ public class playerMovement : MonoBehaviour
                 currentVelocity += mySpeed * Vector2.up * verticalValue;
                 if (verticalValue * isUp < 0)
                 {
-                    flipDir("Vertical");
+                    // flipDir("Vertical");
                     isUp = -isUp;
                 }
                 if (spriteRenderer.sprite != verticalSprite)
                 {
-                    changeSprite("Vertical");
+                    // changeSprite("Vertical");
                 }
             }
         }
 
         myRigidbody.velocity = currentVelocity;
+        _animator.SetFloat("Horizontal",horizontalValue);
+        _animator.SetFloat("Vertical",verticalValue);
+        _animator.SetFloat("Speed",currentVelocity.magnitude);
 
     }
 
