@@ -108,7 +108,7 @@ public class playerMovement : MonoBehaviour
     }
     private void CreateDust()
     {
-        Debug.Log("Dust Created!");
+        //Debug.Log("Dust Created!");
         myDusts.Play();
     }
     private void flipDir(string direction)
