@@ -50,3 +50,6 @@ TagManager:
   - name: Movable(SL)
     uniqueID: 3841602157
     locked: 0
+  - name: PlayerMask
+    uniqueID: 2870292393
+    locked: 0

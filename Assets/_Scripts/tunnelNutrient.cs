@@ -7,8 +7,9 @@ public class tunnelNutrient : Nutrient
 {
     public tunnelManager tm;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         tm = FindObjectOfType<tunnelManager>();
     }
 
