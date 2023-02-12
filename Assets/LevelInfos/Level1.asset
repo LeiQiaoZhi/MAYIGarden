@@ -16,40 +16,32 @@ MonoBehaviour:
   - waveName: Wave 1
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 2
-    nutrients:
-    - nutrientPrefab: {fileID: 3859217117193867342, guid: f0bd6eb6c75940047a5183dd6508941e, type: 3}
-      spawnRangeBotLeft: {x: -16, y: -10}
-      spawnRangeTopRight: {x: 0, y: 0}
+      enemyNumber: 3
+    nutrients: []
     averageSecondsBetweenSpawns: 3
-    secondsBeforeSpawn: 2
+    secondsBeforeSpawn: 5
     plantSpriteIndex: 0
   - waveName: Wave 2
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 4
-    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
-      enemyNumber: 2
+      enemyNumber: 6
     nutrients:
-    - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
-      spawnRangeBotLeft: {x: 0, y: 0}
-      spawnRangeTopRight: {x: 16, y: 6}
-    averageSecondsBetweenSpawns: 2
-    secondsBeforeSpawn: 4
-    plantSpriteIndex: 1
+    - nutrientPrefab: {fileID: 3859217117193867342, guid: f0bd6eb6c75940047a5183dd6508941e, type: 3}
+      spawnRangeBotLeft: {x: 0.75, y: 0.46}
+      spawnRangeTopRight: {x: -4.35, y: 4.88}
+    averageSecondsBetweenSpawns: 1
+    secondsBeforeSpawn: 15
+    plantSpriteIndex: 0
   - waveName: Wave 3
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 4
-    - enemyPrefab: {fileID: 2637863329726935539, guid: 8234ab6f5f355a949ba928421c42f309, type: 3}
-      enemyNumber: 4
-    nutrients:
-    - nutrientPrefab: {fileID: 8558624565868087372, guid: 694c77606679a254b9366996a6d91b22, type: 3}
-      spawnRangeBotLeft: {x: -16, y: 0}
-      spawnRangeTopRight: {x: 0, y: 6}
+      enemyNumber: 1
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      enemyNumber: 2
+    nutrients: []
     averageSecondsBetweenSpawns: 1
     secondsBeforeSpawn: 4
-    plantSpriteIndex: 2
+    plantSpriteIndex: 1
   spritesForPlantStages:
   - {fileID: 1801307423, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
   - {fileID: 1122911490, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
