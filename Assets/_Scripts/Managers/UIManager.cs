@@ -11,9 +11,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] Slider healthSlider;
     public List<Image> heartImages;
     public GameObject TurretInfo;
-    public Text TurretNumText;
+    public TextMeshProUGUI TurretNumText;
     public GameObject TunnelInfo;
-    public Text TunnelNumText;
+    public TextMeshProUGUI TunnelNumText;
 
     private void Awake()
     {

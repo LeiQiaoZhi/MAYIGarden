@@ -16,6 +16,7 @@ public class tunnelManager : MonoBehaviour
     private void Start()
     {
         _uiManager = FindObjectOfType<UIManager>();
+        _uiManager.UpdateTunnelCount(tunnelNum);
     }
 
     public Vector3 getTunnelPos(int id)

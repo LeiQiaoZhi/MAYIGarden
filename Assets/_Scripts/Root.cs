@@ -7,9 +7,9 @@ using UnityEngine;
 public class Root : Health
 {
     public int counterDamage = 2;
+    public float secondsBeforeCounter = 0.5f;
 
     private GameManager _gameManager;
-    public float secondsBeforeCounter = 0.5f;
     private UIManager _uiManager;
 
     public override void Start()

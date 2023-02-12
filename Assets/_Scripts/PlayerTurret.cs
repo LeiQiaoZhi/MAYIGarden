@@ -14,6 +14,7 @@ public class PlayerTurret : MonoBehaviour
     private void Start()
     {
         _uiManager = FindObjectOfType<UIManager>();
+        _uiManager.UpdateTurretCount(_turretCount);
     }
 
     public void GiveTurret()
