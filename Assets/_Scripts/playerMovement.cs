@@ -14,15 +14,18 @@ public class playerMovement : MonoBehaviour
     public Sprite horizontalSprite;
     public Sprite verticalSprite;
     public Rigidbody2D myRigidbody;
-    public ParticleSystem myDusts;
+
+    public List<ParticleSystem> myDusts;
+
     // isRight means the key board tells to move right, when moving left, isRight = -1
-    private int isRight=1;
+    private int isRight = 1;
 
     private Animator _animator;
+
     // similar for isUp
-    private int isUp=1;
+    private int isUp = 1;
     public float attackCentreDist = 1;
-    [Range(0, 40)][SerializeField] public float mySpeed = 10;
+    [Range(0, 40)] [SerializeField] public float mySpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,7 @@ public class playerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         gameObject.name = "Hanson";
     }
+
     void Update()
     {
         //Get motion value from keys
@@ -52,25 +56,26 @@ public class playerMovement : MonoBehaviour
                 // now moves to opposite direction
                 isRight = -isRight;
             }
+
             //if the ant sprite is previously vertical
-            if(spriteRenderer.sprite != horizontalSprite)
+            if (spriteRenderer.sprite != horizontalSprite)
             {
                 // changeSprite("Horizontal");
             }
         }
         //else is added as we dont want the ant to move diagonally
         else
-        {   
+        {
             if (verticalValue != 0)
             {
                 CreateDust();
                 currentVelocity += mySpeed * Vector2.up * verticalValue;
                 if (verticalValue * isUp < 0)
                 {
-                    
                     // flipDir("Vertical");
                     isUp = -isUp;
                 }
+
                 if (spriteRenderer.sprite != verticalSprite)
                 {
                     // changeSprite("Vertical");
@@ -79,19 +84,18 @@ public class playerMovement : MonoBehaviour
         }
 
         myRigidbody.velocity = currentVelocity;
-        _animator.SetFloat("Horizontal",horizontalValue);
-        _animator.SetFloat("Vertical",verticalValue);
-        _animator.SetFloat("Speed",currentVelocity.magnitude);
-
+        _animator.SetFloat("Horizontal", horizontalValue);
+        _animator.SetFloat("Vertical", verticalValue);
+        _animator.SetFloat("Speed", currentVelocity.magnitude);
     }
 
-    public IEnumerator AttackAnimate(float distance, float attackAnimateTime,float attackScaleRatio = 1.5f)
+    public IEnumerator AttackAnimate(float distance, float attackAnimateTime, float attackScaleRatio = 1.5f)
     {
         Vector2 attackScale = spriteRenderer.transform.localScale;
         attackScale.x *= attackScaleRatio;
         attackScale.y /= attackScaleRatio;
         Vector2 originalScale = spriteRenderer.transform.localScale;
-        spriteRenderer.transform.Translate(distance,0,0);
+        spriteRenderer.transform.Translate(distance, 0, 0);
         spriteRenderer.transform.localScale = attackScale;
         yield return new WaitForSeconds(attackAnimateTime);
         spriteRenderer.transform.Translate(-distance, 0, 0);
@@ -102,33 +106,41 @@ public class playerMovement : MonoBehaviour
     {
         myRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
     }
+
     public void UnfreezePos()
     {
         myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
+
     private void CreateDust()
     {
         //Debug.Log("Dust Created!");
-        myDusts.Play();
+        foreach (var dust in myDusts)
+        {
+            dust.Play();
+        }
     }
+
     private void flipDir(string direction)
     {
         Vector2 localScale = gameObject.transform.localScale;
-        if(direction == "Horizontal")
+        if (direction == "Horizontal")
         {
             localScale.x = -localScale.x;
         }
-        if(direction == "Vertical")
+
+        if (direction == "Vertical")
         {
             localScale.y = -localScale.y;
         }
-        gameObject.transform.localScale= localScale;
+
+        gameObject.transform.localScale = localScale;
     }
 
     //!!! I added change scanAreaCentre in this function
     private void changeSprite(string direction)
     {
-        Vector2 localScale = gameObject.transform.localScale;//hard code to avoided inverted sprite when moving.
+        Vector2 localScale = gameObject.transform.localScale; //hard code to avoided inverted sprite when moving.
         if (direction == "Horizontal")
         {
             //keep the vertical scale to positive when moving horizontally
@@ -143,6 +155,7 @@ public class playerMovement : MonoBehaviour
             scanAreaCentre.position = gameObject.transform.position + attackCentreDist * Vector3.right * localScale.x;
             spriteRenderer.sprite = horizontalSprite;
         }
+
         if (direction == "Vertical")
         {
             // Change direction of attack centre

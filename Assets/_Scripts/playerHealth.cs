@@ -74,7 +74,7 @@ public class playerHealth: Health
         movement_manager.mySpeed = curr_speed;
         _currentHealth = maxHealth;
         Debug.Log("Restored Player Health to " + maxHealth);
-        ChangeHealth(0,gameObject);
+        _uiManager.UpdatePlayerHealthUI(_currentHealth);
         movement_manager.UnfreezePos();
         immune = false;
         Debug.LogWarning("The player is now normal");

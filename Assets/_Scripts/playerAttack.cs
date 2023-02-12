@@ -6,7 +6,8 @@ using static UnityEngine.GraphicsBuffer;
 public class playerAttack : MonoBehaviour
 {
     public playerMovement myMovement;
-    public float scanAreaRadius = 10f;
+    // public float scanAreaRadius = 10f;
+    [SerializeField] private Vector2 scanAreaSize;
     public Transform scanAreaCentre; // the centre position of plyaer's attack scanning region
     public float secondsBetweenAttacks = 1f;
     private float nextAttackTime = 0f;
@@ -40,7 +41,7 @@ public class playerAttack : MonoBehaviour
             nextAttackTime = Time.time + secondsBetweenAttacks;
             //1. find all enemies in the radius
             Debug.Log("Player trying to attack");
-            Collider2D[] hits = Physics2D.OverlapCircleAll(scanAreaCentre.position, scanAreaRadius, targetLayers);
+            Collider2D[] hits = Physics2D.OverlapBoxAll(scanAreaCentre.position, scanAreaSize, 0,targetLayers);
             foreach (Collider2D hit in hits)
             {
                 Debug.LogWarning($"Player Attack Target Acquired -- {hit.name}");
@@ -69,6 +70,7 @@ public class playerAttack : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(scanAreaCentre.position, scanAreaRadius);
+        // Gizmos.DrawWireSphere(scanAreaCentre.position, scanAreaRadius);
+        Gizmos.DrawWireCube(scanAreaCentre.position,scanAreaSize);
     }
 }

@@ -17,8 +17,9 @@ MonoBehaviour:
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
       enemyNumber: 1
+    nutrients: []
     averageSecondsBetweenSpawns: 1
     secondsBeforeSpawn: 0
     plantSpriteIndex: 0
   spritesForPlantStages:
-  - {fileID: -291044671, guid: 45f3c19afdb0d104ba441e4a2088c181, type: 3}
+  - {fileID: 1801307423, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
