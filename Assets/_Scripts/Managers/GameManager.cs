@@ -40,19 +40,19 @@ public class GameManager : MonoBehaviour
 
             // change plant sprite
             plantSpriteRender.sprite = levelInfo.GetSpriteForWave(index);
-            
+
             // wait a few seconds before start spawning
             yield return new WaitForSeconds(wave.secondsBeforeSpawn);
-            
+
             // spawn nutrients
             foreach (var nutrient in wave.nutrients)
             {
                 var nutrientComponent = Instantiate(nutrient.nutrientPrefab).GetComponent<Nutrient>();
                 Vector2 targetPos = new Vector2(
-                    UnityEngine.Random.Range(nutrient.spawnRangeBotLeft.x,nutrient.spawnRangeTopRight.x),
-                    UnityEngine.Random.Range(nutrient.spawnRangeBotLeft.y,nutrient.spawnRangeTopRight.y)
+                    UnityEngine.Random.Range(nutrient.spawnRangeBotLeft.x, nutrient.spawnRangeTopRight.x),
+                    UnityEngine.Random.Range(nutrient.spawnRangeBotLeft.y, nutrient.spawnRangeTopRight.y)
                 );
-                nutrientComponent.SpawnFromSky(targetPos,fallSpeed:nutrientFallSpeed);
+                nutrientComponent.SpawnFromSky(targetPos, fallSpeed: nutrientFallSpeed);
                 Debug.LogWarning($"Spawning nutrient {nutrient.nutrientPrefab.name} to {targetPos}");
             }
 
@@ -94,12 +94,31 @@ public class GameManager : MonoBehaviour
         spawnFinished = true;
     }
 
+        bool _startCheckingLevelEnd;
     public void UpdateEnemyCount(int change)
     {
         _enemyCount += change;
-        if (_enemyCount <= 0 && spawnFinished && FindObjectOfType<EnemyHealth>() == null)
+        if (_enemyCount <= 0 && spawnFinished)
+
         {
-            LevelFinish();
+            _startCheckingLevelEnd = true;
+            if (GetComponentInChildren<EnemyHealth>() == null)
+            {
+                LevelFinish();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (_startCheckingLevelEnd)
+        {
+            if (GetComponentInChildren<EnemyHealth>() == null)
+            {
+                LevelFinish();
+                _startCheckingLevelEnd = false;
+            }
+            
         }
     }
 
@@ -135,7 +154,7 @@ public class GameManager : MonoBehaviour
             {
                 Vector2 center = (nutrient.spawnRangeBotLeft + nutrient.spawnRangeTopRight) / 2;
                 Vector2 diff = nutrient.spawnRangeTopRight - nutrient.spawnRangeBotLeft;
-                Gizmos.DrawWireCube(center,diff);
+                Gizmos.DrawWireCube(center, diff);
             }
         }
     }

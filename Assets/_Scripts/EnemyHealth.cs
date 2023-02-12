@@ -8,9 +8,16 @@ public class EnemyHealth : Health
     public float blinkSecond = 0.1f;
     public float freezeSecond = 0.1f;
     [SerializeField] private GameEvent enemyDeathEvent;
+    private Rigidbody2D _rigidbody2D;
 
 
     // ReSharper disable Unity.PerformanceAnalysis
+    public override void Start()
+    {
+        base.Start();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
     public override void ChangeHealth(int change, GameObject from)
     {
         // attacked feedback
@@ -25,12 +32,15 @@ public class EnemyHealth : Health
     // ReSharper disable Unity.PerformanceAnalysis
     IEnumerator Freeze()
     {
-        EnemyAttack enemyAttack = GetComponent<EnemyAttack>();
-
-        enemyAttack.Stop();
+        Debug.LogWarning("Enemy is frozen");
+        // EnemyAttack enemyAttack = GetComponent<EnemyAttack>();
+        // enemyAttack.Stop();
+        _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(freezeSecond);
 
-        enemyAttack.Resume();
+        Debug.LogWarning("Enemy Resume");
+        _rigidbody2D.constraints = RigidbodyConstraints2D.None;
+        // enemyAttack.Resume();
     }
 
     // ReSharper disable Unity.PerformanceAnalysis

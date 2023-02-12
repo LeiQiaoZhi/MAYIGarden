@@ -243,6 +243,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 909332637, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
+      propertyPath: scanAreaSize.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 909332637, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
+      propertyPath: scanAreaSize.y
+      value: 2.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1684411819299273205, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
       propertyPath: m_RootOrder
       value: 19
