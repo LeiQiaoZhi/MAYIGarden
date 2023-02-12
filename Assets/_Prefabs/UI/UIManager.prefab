@@ -47,3 +47,4 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   levelEndScreen: {fileID: 0}
   pauseScreen: {fileID: 0}
+  healthSlider: {fileID: 0}

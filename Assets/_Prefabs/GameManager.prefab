@@ -56,6 +56,8 @@ MonoBehaviour:
   - {fileID: 3956286319859324124}
   - {fileID: 3956286319382068668}
   - {fileID: 3956286319362076162}
+  - {fileID: 3956286318781905775}
+  nutrientFallSpeed: 2
 --- !u!114 &1692387341
 MonoBehaviour:
   m_ObjectHideFlags: 0

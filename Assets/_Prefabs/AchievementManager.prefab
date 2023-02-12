@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d29ea889ac86cc42a1fa5ce4b797a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievementNames: []
+  achievementNames:
+  - Default
   deathCountAchievements: []
