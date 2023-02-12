@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b80c40e7c788cc94b89eb0410c73f51a, type: 3}
-  m_Name: Level1
+  m_Name: Level2
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave 1
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
+      enemyNumber: 8
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
       enemyNumber: 3
     nutrients: []
     averageSecondsBetweenSpawns: 3
@@ -24,36 +26,46 @@ MonoBehaviour:
   - waveName: Wave 2
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 6
+      enemyNumber: 12
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      enemyNumber: 4
     nutrients:
     - nutrientPrefab: {fileID: 3859217117193867342, guid: f0bd6eb6c75940047a5183dd6508941e, type: 3}
-      spawnRangeBotLeft: {x: 0.84, y: 0.46}
-      spawnRangeTopRight: {x: -4.35, y: 4.88}
-    averageSecondsBetweenSpawns: 1
-    secondsBeforeSpawn: 10
-    plantSpriteIndex: 1
+      spawnRangeBotLeft: {x: 12, y: 5}
+      spawnRangeTopRight: {x: 16, y: 0}
+    - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
+      spawnRangeBotLeft: {x: -3, y: 3}
+      spawnRangeTopRight: {x: 3, y: 0}
+    averageSecondsBetweenSpawns: 2
+    secondsBeforeSpawn: 15
+    plantSpriteIndex: 0
   - waveName: Wave 3
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 8
-    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
-      enemyNumber: 3
-    nutrients: []
+      enemyNumber: 4
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 8234ab6f5f355a949ba928421c42f309, type: 3}
+      enemyNumber: 2
+    nutrients:
+    - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
+      spawnRangeBotLeft: {x: 12, y: 5}
+      spawnRangeTopRight: {x: 16, y: 0}
     averageSecondsBetweenSpawns: 3
-    secondsBeforeSpawn: 10
+    secondsBeforeSpawn: 15
     plantSpriteIndex: 1
   - waveName: Wave 4
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 10
+      enemyNumber: 8
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 8234ab6f5f355a949ba928421c42f309, type: 3}
+      enemyNumber: 4
     - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
-      enemyNumber: 5
+      enemyNumber: 4
     nutrients:
     - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
-      spawnRangeBotLeft: {x: 10, y: -2}
-      spawnRangeTopRight: {x: 15, y: -10}
-    averageSecondsBetweenSpawns: 3
-    secondsBeforeSpawn: 10
+      spawnRangeBotLeft: {x: -15, y: 5}
+      spawnRangeTopRight: {x: -10, y: 0}
+    averageSecondsBetweenSpawns: 2
+    secondsBeforeSpawn: 15
     plantSpriteIndex: 2
   spritesForPlantStages:
   - {fileID: 1801307423, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
