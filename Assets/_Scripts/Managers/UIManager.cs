@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
     [SerializeField] Slider healthSlider;
     public List<Image> heartImages;
+    public GameObject TurretInfo;
+    public Text TurretNumText;
+    public GameObject TunnelInfo;
+    public Text TunnelNumText;
 
     private void Awake()
     {
@@ -75,5 +79,31 @@ public class UIManager : MonoBehaviour
     {
         pauseScreen.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void UpdateTurretCount(int turretCount)
+    {
+        TurretNumText.text = $"x{turretCount}";
+        if (turretCount <= 0)
+        {
+            TurretInfo.SetActive(false);
+        }
+        else
+        {
+            TurretInfo.SetActive(true);
+        }
+    }
+
+    public void UpdateTunnelCount(int seedNum)
+    {
+        TurretNumText.text = $"x{seedNum}";
+        if (seedNum <= 0)
+        {
+            TunnelInfo.SetActive(false);
+        }
+        else
+        {
+            TunnelInfo.SetActive(true);
+        }
     }
 }

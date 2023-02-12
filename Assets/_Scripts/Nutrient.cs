@@ -6,15 +6,14 @@ using UnityEngine;
 public abstract class Nutrient : MonoBehaviour
 {
     // [SerializeField] private float spawnHeight=12;
-    private Collider2D _collider;
-    private SpriteRenderer _spriteRenderer;
+    protected UIManager uiManager;
+    protected Collider2D _collider;
+    protected SpriteRenderer _spriteRenderer;
 
     public virtual void Start()
     {
-        
+        uiManager = FindObjectOfType<UIManager>();
     }
-    
-    
 
     private void OnTriggerEnter2D(Collider2D col)
     {

@@ -15,7 +15,8 @@ public class tunnelNutrient : Nutrient
 
     public override void OnTriggerWithPlayer(GameObject player)
     {
-        Debug.LogWarning($"Tunnel Nutrient is picked up by player. Gained 1 seed");
-        tm.seedNum++;
+        Debug.LogWarning($"Tunnel Nutrient is picked up by player. Gained 2 seed");
+        tm.seedNum+=2;
+        uiManager.UpdateTunnelCount(tm.seedNum);
     }
 }

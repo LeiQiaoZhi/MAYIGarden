@@ -9,8 +9,14 @@ public class tunnelManager : MonoBehaviour
     private int tunnelNum = 0; //this will need to change to private later
     public GameObject tunnelPrefab;
     public float coolDownTime = 1.5f;
-    private float nextTrasTime =1f; // potentially, the player may get transported when creating the portal
+    private float nextTrasTime = 1f; // potentially, the player may get transported when creating the portal
+    private UIManager _uiManager;
 
+
+    private void Start()
+    {
+        _uiManager = FindObjectOfType<UIManager>();
+    }
 
     public Vector3 getTunnelPos(int id)
     {
@@ -20,7 +26,7 @@ public class tunnelManager : MonoBehaviour
             if (tunnelNum < 2)
             {
                 Debug.Log("Not enough tunnel, only " + tunnelNum);
-                return Vector3.zero;//problem here, will go to origin if only one tunnel
+                return Vector3.zero; //problem here, will go to origin if only one tunnel
             }
             else
             {
@@ -42,23 +48,15 @@ public class tunnelManager : MonoBehaviour
             Debug.Log("Not enough seed, onlt " + seedNum);
             return;
         }
-        else
-        {
-            seedNum -= 1;
-            nextTrasTime= Time.time + coolDownTime; // not transporting at first creation
-            // instantiate a tunnel at pos
-            GameObject newTunnel = Instantiate(tunnelPrefab, pos, Quaternion.identity);
-            newTunnel.GetComponent<tunnelTransport>().tm = this;
-            newTunnel.GetComponent<tunnelTransport>().id = tunnelNum;
-            tunnelList[tunnelNum] = newTunnel;//add the new tunnel to the list
-            tunnelNum += 1;
-        }
-    } 
 
-
+        seedNum -= 1;
+        _uiManager.UpdateTunnelCount(seedNum);
+        nextTrasTime = Time.time + coolDownTime; // not transporting at first creation
+        // instantiate a tunnel at pos
+        GameObject newTunnel = Instantiate(tunnelPrefab, pos, Quaternion.identity);
+        newTunnel.GetComponent<tunnelTransport>().tm = this;
+        newTunnel.GetComponent<tunnelTransport>().id = tunnelNum;
+        tunnelList[tunnelNum] = newTunnel; //add the new tunnel to the list
+        tunnelNum += 1;
+    }
 }
-
-
-
-
-
