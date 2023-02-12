@@ -84,9 +84,9 @@ public class GameManager : MonoBehaviour
             // periodically spawn an enemy
             for (int i = 0; i < enemyList.Count; i++)
             {
+                UpdateEnemyCount(1);
                 Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
                 Instantiate(enemyList[i], spawnPoint);
-                UpdateEnemyCount(1);
                 yield return new WaitForSeconds(wave.averageSecondsBetweenSpawns);
             }
         }
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
     public void UpdateEnemyCount(int change)
     {
         _enemyCount += change;
-        if (_enemyCount <= 0 && spawnFinished)
+        if (_enemyCount <= 0 && spawnFinished && FindObjectOfType<EnemyHealth>() == null)
         {
             LevelFinish();
         }

@@ -45,7 +45,7 @@ public class Root : Health
 
         if (change > 0)
         {
-            var effect = Instantiate(healingEffect, transform);
+            var effect = Instantiate(healingEffect, transform.GetChild(0));
             Destroy(effect,5f);
         }
     }
