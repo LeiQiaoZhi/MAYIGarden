@@ -22,10 +22,10 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        foreach (var t in levelsUnlockedAtTheStart)
-        {
-            UnlockLevel(t);
-        }
+        // foreach (var t in levelsUnlockedAtTheStart)
+        // {
+        //     UnlockLevel(t);
+        // }
     }
     public void ResetLevels()
     {
