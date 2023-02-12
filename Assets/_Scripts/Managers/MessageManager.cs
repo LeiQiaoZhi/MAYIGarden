@@ -16,7 +16,7 @@ public class MessageManager : MonoBehaviour
 
     private void Start()
     {
-        DisplayMessage("Test Message", null, 2);
+        // DisplayMessage("Test Message", null, 2);
     }
 
     private void Awake()

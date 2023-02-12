@@ -25,10 +25,7 @@ public class LevelButton : MonoBehaviour
         UpdateSprite();
     }
 
-    private void OnEnable()
-    {
-        UpdateSprite();
-    }
+ 
 
     public void UpdateSprite()
     {
