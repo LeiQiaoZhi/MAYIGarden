@@ -243,14 +243,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 909332637, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
-      propertyPath: scanAreaSize.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 909332637, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
-      propertyPath: scanAreaSize.y
-      value: 2.4
-      objectReference: {fileID: 0}
     - target: {fileID: 1684411819299273205, guid: a7312a21ff99ffb44bacafe5736a9359, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1598,14 +1590,6 @@ PrefabInstance:
     - target: {fileID: 3956286318519116282, guid: fcca6dd70e56ef0489fa8b1b6b8a824d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3956286318519116283, guid: fcca6dd70e56ef0489fa8b1b6b8a824d, type: 3}
-      propertyPath: levelInfo
-      value: 
-      objectReference: {fileID: 11400000, guid: fa6d47fb82421244bb0371ff738a4bdf, type: 2}
-    - target: {fileID: 3956286318519116283, guid: fcca6dd70e56ef0489fa8b1b6b8a824d, type: 3}
-      propertyPath: nutrientFallSpeed
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3956286318519116283, guid: fcca6dd70e56ef0489fa8b1b6b8a824d, type: 3}
       propertyPath: plantSpriteRender

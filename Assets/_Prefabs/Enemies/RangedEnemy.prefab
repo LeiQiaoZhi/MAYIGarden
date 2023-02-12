@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 4
   blinkSecond: 0.1
-  freezeSecond: 1
+  freezeSecond: 0.5
   enemyDeathEvent: {fileID: 11400000, guid: 367b3e50d8fe5ad42a6b06db22c7f32c, type: 2}
 --- !u!50 &1146384465626446926
 Rigidbody2D:

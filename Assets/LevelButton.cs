@@ -5,15 +5,37 @@ using UnityEngine;
 
 public class LevelButton : MonoBehaviour
 {
+    public int levelIndex = 1;
     public Vector3 originalScale;
     public Vector3 hoverScale;
+    public Sprite grownSprite;
+    public Sprite youngSprite;
+    
     private GameSceneManager _sceneManager;
     private MainMenuManager _mainMenuManager;
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _mainMenuManager = FindObjectOfType<MainMenuManager>();
         _sceneManager = FindObjectOfType<GameSceneManager>();
+        
+        // init 
+        UpdateSprite();
+       
+    }
+
+    public void UpdateSprite()
+    {
+        if (LevelManager.instance.IsLevelUnlocked(levelIndex))
+        {
+            _spriteRenderer.sprite = grownSprite;
+        }
+        else
+        {
+            _spriteRenderer.sprite = youngSprite;
+        } 
     }
 
     private void OnMouseEnter()

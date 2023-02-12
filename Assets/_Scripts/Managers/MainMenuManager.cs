@@ -12,6 +12,9 @@ public class MainMenuManager : MonoBehaviour
     public List<CanvasGroup> achievementCanvasGroups;
     public List<GameObject> views;
     public TextMeshProUGUI deathCountTxt;
+    public List<GameObject> levelViews;
+
+    private int _currentLevelIndex = 0;
 
     [Header("Sound")]
     [SerializeField] Toggle musicToggle;
@@ -27,6 +30,9 @@ public class MainMenuManager : MonoBehaviour
         levelsButton.Select();
         ShowView(0);
         
+        // select a level view
+        ChangeLevelIndex(0);
+        
         // default music and sound vol
         SetMusicVol(defaultMusicVol);
         SetSoundFxVol(defaultSoundFxVol);
@@ -37,6 +43,23 @@ public class MainMenuManager : MonoBehaviour
         // achievements
         SetAchievementsLock();
         UpdateDeathCount();
+    }
+
+    public void ChangeLevelIndex(int increment)
+    {
+        _currentLevelIndex = (_currentLevelIndex + increment) % levelViews.Count;
+        for (int i = 0; i < levelViews.Count; i++)
+        {
+            if (_currentLevelIndex == i)
+            {
+                levelViews[i].SetActive(true);
+                levelViews[i].GetComponentInChildren<LevelButton>().UpdateSprite();
+            }
+            else
+            {
+                levelViews[i].SetActive(false);
+            }
+        }
     }
 
     public void MainMenuLeave()

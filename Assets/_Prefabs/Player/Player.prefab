@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMovement: {fileID: 1684411819299273209}
-  scanAreaSize: {x: 1, y: 2}
+  scanAreaSize: {x: 1.2, y: 2.4}
   scanAreaCentre: {fileID: 1039341671}
   secondsBetweenAttacks: 0.2
   targetLayers:
