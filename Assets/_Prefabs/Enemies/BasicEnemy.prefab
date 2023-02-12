@@ -239,7 +239,7 @@ MonoBehaviour:
   maxSpeed: 3
   target: {fileID: 0}
   findRadius: 0
-  damage: 1
+  damage: 2
   attackableThings:
     serializedVersion: 2
     m_Bits: 8192

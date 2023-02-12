@@ -35,12 +35,12 @@ MonoBehaviour:
   - waveName: Wave 3
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
-      enemyNumber: 1
-    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
       enemyNumber: 2
+    - enemyPrefab: {fileID: 2637863329726935539, guid: 2e4f0694158492f4182826cac46009d7, type: 3}
+      enemyNumber: 5
     nutrients: []
-    averageSecondsBetweenSpawns: 1
-    secondsBeforeSpawn: 4
+    averageSecondsBetweenSpawns: 3
+    secondsBeforeSpawn: 15
     plantSpriteIndex: 1
   spritesForPlantStages:
   - {fileID: 1801307423, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
