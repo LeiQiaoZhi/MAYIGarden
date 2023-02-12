@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f212c64a73fca3a40b76c26935e39b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2
+  maxSpeed: 1.5
   target: {fileID: 0}
   rotateSpeed: 200
   bulletPrefab: {fileID: 5231070670449638890, guid: 9c1cc3a49fe7a0f4b96c8749494625db, type: 3}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2abb101f35197478ad9ed7110e6888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 4
   blinkSecond: 0.1
   freezeSecond: 1
   enemyDeathEvent: {fileID: 11400000, guid: 367b3e50d8fe5ad42a6b06db22c7f32c, type: 2}
