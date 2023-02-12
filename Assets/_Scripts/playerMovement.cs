@@ -14,6 +14,7 @@ public class playerMovement : MonoBehaviour
     public Sprite horizontalSprite;
     public Sprite verticalSprite;
     public Rigidbody2D myRigidbody;
+    public ParticleSystem myDusts;
     // isRight means the key board tells to move right, when moving left, isRight = -1
     private int isRight=1;
 
@@ -39,7 +40,8 @@ public class playerMovement : MonoBehaviour
         Vector2 currentVelocity = Vector2.zero;
         //if there is horizontal movement
         if (horizontalValue != 0)
-        {   
+        {
+            CreateDust();
             //add the horizontal velocity to current velocity
             currentVelocity += mySpeed * Vector2.right * horizontalValue;
             // if the horizontal movement input is in opposite to the direction facing
@@ -61,9 +63,11 @@ public class playerMovement : MonoBehaviour
         {   
             if (verticalValue != 0)
             {
+                CreateDust();
                 currentVelocity += mySpeed * Vector2.up * verticalValue;
                 if (verticalValue * isUp < 0)
                 {
+                    
                     // flipDir("Vertical");
                     isUp = -isUp;
                 }
@@ -101,6 +105,11 @@ public class playerMovement : MonoBehaviour
     public void UnfreezePos()
     {
         myRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+    private void CreateDust()
+    {
+        Debug.Log("Dust Created!");
+        myDusts.Play();
     }
     private void flipDir(string direction)
     {
