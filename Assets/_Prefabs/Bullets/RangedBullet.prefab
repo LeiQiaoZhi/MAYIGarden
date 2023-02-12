@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultTowardsDirection: 1
-  speed: 5
+  speed: 3
   damage: 2
   lifeTime: 10
   layersToDestroyIt:

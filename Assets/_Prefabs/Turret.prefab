@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9ea9196e66c23479c2e16904a6220a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectRadius: 8
+  detectRadius: 5
   secondsBetweenFire: 2
   rotateSpeed: 200
   bulletPrefab: {fileID: 5231070670449638890, guid: b333ee31068921043a0ae02784cd5588, type: 3}

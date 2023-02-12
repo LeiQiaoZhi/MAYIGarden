@@ -468,7 +468,7 @@ MonoBehaviour:
   - {fileID: 2992226215216262232}
   - {fileID: 2992226215457744769}
   attackCentreDist: 1
-  mySpeed: 10
+  mySpeed: 4
 --- !u!114 &909332623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   movement_manager: {fileID: 1684411819299273209}
   rotPerSec: 240
   dieRotTime: 3
-  immuneTime: 4
+  immuneTime: 5
   playerSpriteAnimator: {fileID: 508093846}
 --- !u!114 &909332637
 MonoBehaviour:
