@@ -44,14 +44,14 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        var _colGameObject = col.gameObject;
-        if (LayerMaskHelper.IsInLayerMask(col.gameObject.layer, targetLayers))
+        var colGameObject = col.gameObject;
+        if (LayerMaskHelper.IsInLayerMask(colGameObject.layer, targetLayers))
         {
-            Health health = _colGameObject.GetComponent<Health>();
+            Health health = colGameObject.GetComponent<Health>();
             health.ChangeHealth(-damage, gameObject);
         }
 
-        if (LayerMaskHelper.IsInLayerMask(_colGameObject.layer, layersToDestroyIt))
+        if (LayerMaskHelper.IsInLayerMask(colGameObject.layer, layersToDestroyIt))
         {
             Destroy(gameObject);
         }

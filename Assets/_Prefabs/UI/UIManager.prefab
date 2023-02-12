@@ -48,3 +48,9 @@ MonoBehaviour:
   levelEndScreen: {fileID: 0}
   pauseScreen: {fileID: 0}
   healthSlider: {fileID: 0}
+  heartImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

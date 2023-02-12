@@ -150,8 +150,4 @@ public class playerMovement : MonoBehaviour
             spriteRenderer.sprite = verticalSprite;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.LogWarning("Player collided with something");
-    }
 }

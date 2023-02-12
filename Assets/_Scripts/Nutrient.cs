@@ -38,7 +38,6 @@ public abstract class Nutrient : MonoBehaviour
     {
         _collider.enabled = false;
         _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
-        Debug.LogWarning($"{targetPos},{fallSpeed}");
         while (-(targetPos.y-transform.position.y) > 0.1f)
         {
             transform.position +=  Vector3.down * (fallSpeed * Time.deltaTime);

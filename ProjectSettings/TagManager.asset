@@ -18,12 +18,12 @@ TagManager:
   - Obstacles
   - Enemies
   - Player
-  - Bullets
+  - EnemyBullets
   - Borders
   - DestructableObjects
   - Root
   - Tunnel
-  - 
+  - PlayerBullets
   - 
   - 
   - 

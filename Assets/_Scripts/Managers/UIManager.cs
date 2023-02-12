@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -8,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject levelEndScreen;
     [SerializeField] GameObject pauseScreen;
     [SerializeField] Slider healthSlider;
+    public List<Image> heartImages;
 
     private void Awake()
     {
@@ -30,6 +32,25 @@ public class UIManager : MonoBehaviour
         healthSlider.value = (health / (float)maxHealth);
     }
 
+    public void UpdatePlayerHealthUI(int health)
+    {
+        for (int i = 0; i < heartImages.Count; i++)
+        {
+            if (i < health)
+            {
+                Color temp = heartImages[i].color;
+                temp.a = 1;
+                heartImages[i].color = temp;
+            }
+            else
+            {
+                Color temp = heartImages[i].color;
+                temp.a = 0.2f;
+                heartImages[i].color = temp;
+            }
+        }
+    }
+
     public void DisplayAchievementUnlockMessage(int i)
     {
         AchievementManager achievementManager = AchievementManager.instance;
@@ -38,8 +59,10 @@ public class UIManager : MonoBehaviour
             Debug.Log($"Achivement {achievementManager.achievementNames[i]} is already unlocked");
             return;
         }
+
         achievementManager.UnlockAchievement(i);
-        MessageManager.Instance.DisplayMessage($"Achievement Unlock: {achievementManager.achievementNames[i].ToUpper()}");
+        MessageManager.Instance.DisplayMessage(
+            $"Achievement Unlock: {achievementManager.achievementNames[i].ToUpper()}");
     }
 
     public void Pause()
@@ -53,4 +76,4 @@ public class UIManager : MonoBehaviour
         pauseScreen.SetActive(false);
         Time.timeScale = 1;
     }
-  }
+}
