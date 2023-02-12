@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7947377335876024046}
   - component: {fileID: 5133464635390839584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9046107998248337897}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ScanAreaCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 3818749043524608897}
   - component: {fileID: 8784428248551143031}
   - component: {fileID: 2986625668290492196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RangedBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ MonoBehaviour:
   lifeTime: 10
   layersToDestroyIt:
     serializedVersion: 2
-    m_Bits: 16000
+    m_Bits: 16256
   targetLayers:
     serializedVersion: 2
     m_Bits: 12800
