@@ -8,6 +8,7 @@ public class Root : Health
 {
     public int counterDamage = 2;
     public float secondsBeforeCounter = 0.5f;
+    public ParticleSystem healingEffect;
 
     private GameManager _gameManager;
     private UIManager _uiManager;
@@ -40,6 +41,12 @@ public class Root : Health
         if (change < 0 && counterDamage > 0)
         {
             StartCoroutine(Counter(from));
+        }
+
+        if (change > 0)
+        {
+            var effect = Instantiate(healingEffect, transform);
+            Destroy(effect,5f);
         }
     }
 
