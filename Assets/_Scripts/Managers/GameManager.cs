@@ -139,6 +139,15 @@ public class GameManager : MonoBehaviour
             animator.SetTrigger("LevelEnd");
         }
         LevelManager.instance.UnlockLevel(SceneManager.GetActiveScene().buildIndex);
+        for (int i = 1; i <= 3; i++)
+        {
+            if (!LevelManager.instance.IsLevelUnlocked(i))
+            {
+                return;
+            }
+        }
+        MessageManager.Instance.DisplayMessage("Achievement Unlocked");
+        AchievementManager.instance.UnlockAchievement(0);
     }
 
 

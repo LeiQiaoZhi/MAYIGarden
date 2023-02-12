@@ -10,6 +10,7 @@ public class Turret : MonoBehaviour
     public float secondsBetweenFire = 1f;
     public float rotateSpeed = 20;
     public GameObject bulletPrefab;
+    public Transform firePoint;
 
     private float fireTime = 0f;
     private Rigidbody2D _rb;
@@ -50,7 +51,7 @@ public class Turret : MonoBehaviour
             {
                 AudioManager.Instance.PlaySound("Shoot");
                 fireTime = Time.time + secondsBetweenFire;
-                Instantiate(bulletPrefab, transform.position, transform.rotation);
+                Instantiate(bulletPrefab, firePoint.position, transform.rotation);
             }
         }
         else
