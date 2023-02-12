@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 /// <summary>
@@ -28,6 +29,10 @@ public class GameManager : MonoBehaviour
         spawnFinished = false;
         _waves = levelInfo.waves;
         StartCoroutine(SpawnCoroutine());
+        
+        // music
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayMusic("LevelBGM");
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -122,6 +127,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void LevelFinish()
     {
         Debug.LogWarning("LEVEL FINISHED.");
@@ -130,6 +136,7 @@ public class GameManager : MonoBehaviour
         {
             animator.SetTrigger("LevelEnd");
         }
+        LevelManager.instance.UnlockLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
 

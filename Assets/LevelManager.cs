@@ -22,16 +22,17 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // TODO: remove these in published
-        for (int i = 1; i <= 3; i++)
-        {
-            LockLevel(i);
-        }
-
         foreach (var t in levelsUnlockedAtTheStart)
         {
             UnlockLevel(t);
         }
+    }
+    public void ResetLevels()
+    {
+        for (int i = 1; i <= 3; i++)
+        {
+            LockLevel(i);
+        } 
     }
 
     public void LockLevel(int i)

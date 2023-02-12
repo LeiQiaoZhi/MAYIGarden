@@ -43,23 +43,34 @@ public class MainMenuManager : MonoBehaviour
         // achievements
         SetAchievementsLock();
         UpdateDeathCount();
+        
+        //  bgm
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayMusic("MenuBGM");
+        
     }
+
+
 
     public void ChangeLevelIndex(int increment)
     {
-        _currentLevelIndex = (_currentLevelIndex + increment) % levelViews.Count;
+        _currentLevelIndex = (_currentLevelIndex + increment + levelViews.Count) % levelViews.Count;
         for (int i = 0; i < levelViews.Count; i++)
         {
             if (_currentLevelIndex == i)
             {
                 levelViews[i].SetActive(true);
-                levelViews[i].GetComponentInChildren<LevelButton>().UpdateSprite();
             }
             else
             {
                 levelViews[i].SetActive(false);
             }
         }
+    }
+
+    public void ClickSound()
+    {
+        AudioManager.Instance.PlaySound("Click");
     }
 
     public void MainMenuLeave()
