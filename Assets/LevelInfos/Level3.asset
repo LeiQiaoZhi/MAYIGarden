@@ -66,6 +66,6 @@ MonoBehaviour:
     secondsBeforeSpawn: 15
     plantSpriteIndex: 2
   spritesForPlantStages:
-  - {fileID: 1801307423, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
-  - {fileID: 1122911490, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
-  - {fileID: 1343567260, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
+  - {fileID: 35162399, guid: cbb583ff36e00e943a2e08db63d4eebc, type: 3}
+  - {fileID: -1106802671, guid: cbb583ff36e00e943a2e08db63d4eebc, type: 3}
+  - {fileID: 21300000, guid: 1a4786d6fad26b64fa02d9e21f2fe5f6, type: 3}

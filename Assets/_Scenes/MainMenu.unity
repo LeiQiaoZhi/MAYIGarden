@@ -553,7 +553,7 @@ Transform:
   m_GameObject: {fileID: 916359159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -7.5, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 177580763}
@@ -624,8 +624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 1
-  originalScale: {x: 4, y: 4, z: 1}
-  hoverScale: {x: 4.3, y: 4.3, z: 1}
+  originalScale: {x: 1, y: 1, z: 1}
+  hoverScale: {x: 1.1, y: 1.1, z: 1}
   grownSprite: {fileID: 1343567260, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
   youngSprite: {fileID: 1801307423, guid: cb010b2cc712bfa4c8b22085e373c876, type: 3}
 --- !u!61 &916359163
@@ -641,18 +641,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.46153906, y: 0.5169548}
-    oldSize: {x: 0.74999994, y: 1.2764348}
+    oldSize: {x: 3.7499998, y: 6.382174}
     newSize: {x: 0.74999994, y: 1.2764348}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3}
+  m_Size: {x: 8, y: 12}
   m_EdgeRadius: 0
 --- !u!1 &952274098
 GameObject:
