@@ -169,7 +169,7 @@ MonoBehaviour:
   maxSpeed: 2.5
   target: {fileID: 0}
   findRadius: 4
-  damage: 1
+  damage: 2
   attackableThings:
     serializedVersion: 2
     m_Bits: 12800
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2abb101f35197478ad9ed7110e6888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 4
   blinkSecond: 0.1
   freezeSecond: 0.5
   enemyDeathEvent: {fileID: 11400000, guid: 367b3e50d8fe5ad42a6b06db22c7f32c, type: 2}
