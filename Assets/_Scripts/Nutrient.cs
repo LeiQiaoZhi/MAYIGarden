@@ -19,6 +19,7 @@ public abstract class Nutrient : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySound("Pickup");
             OnTriggerWithPlayer(col.gameObject);
             Destroy(gameObject);
         }

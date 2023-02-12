@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/GeorgeTestScene.unity
     guid: 7ed41a3eeec8aaa4a952b492e07c8fc3
+  - enabled: 1
+    path: Assets/_Scenes/Level1.unity
+    guid: e04d94462b46d874c82f90a1929939c0
+  - enabled: 1
+    path: Assets/_Scenes/Level2.unity
+    guid: aafee961dcf65ef4e89c60cdf13afb40
   m_configObjects: {}

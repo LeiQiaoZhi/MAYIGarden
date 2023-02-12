@@ -18,6 +18,7 @@ public class LevelLeftRightButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioManager.Instance.PlaySound("Click");
         _mainMenuManager.ChangeLevelIndex(increment);
     }
 }

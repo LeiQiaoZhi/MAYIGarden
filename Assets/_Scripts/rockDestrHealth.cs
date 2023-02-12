@@ -26,7 +26,14 @@ public class rockDestrHealth : Health
         {
             changeSprite(halfDestructedRock);
             changeCollider();
+            AudioManager.Instance.PlaySound("Break");
         }
+        else
+        {
+            AudioManager.Instance.PlaySound("Dun");
+        }
+        
+        
          
         
     }

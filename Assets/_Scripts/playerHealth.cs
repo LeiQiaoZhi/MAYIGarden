@@ -37,9 +37,9 @@ public class playerHealth: Health
         
         // being attacked animation
 
-        // deals counter damage
         if (change < 0)
         {
+            AudioManager.Instance.PlayRandomFromSoundSet("Hit");
             //Debug.LogWarning($"Dealing counter damage to {from.name}");
             //Health health = from.GetComponent<Health>();
             //health.ChangeHealth(-counterDamage, gameObject);
@@ -48,6 +48,7 @@ public class playerHealth: Health
     // ReSharper disable Unity.PerformanceAnalysis
     protected override void Die()
     {
+        AudioManager.Instance.PlaySound("PlayerFreeze");
         Debug.LogWarning("PLAYER HAS DIED.");
 
         // stop player motion for 6 seconds, flashing, and continue moving after.

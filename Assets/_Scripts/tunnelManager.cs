@@ -50,6 +50,7 @@ public class tunnelManager : MonoBehaviour
             return;
         }
 
+        AudioManager.Instance.PlaySound("Dig");
         seedNum -= 1;
         _uiManager.UpdateTunnelCount(seedNum);
         nextTrasTime = Time.time + coolDownTime; // not transporting at first creation

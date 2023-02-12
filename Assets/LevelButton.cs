@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelButton : MonoBehaviour
 {
-    public int levelIndex = 1;
+    public int levelIndex ;
     public Vector3 originalScale;
     public Vector3 hoverScale;
     public Sprite grownSprite;
@@ -54,7 +54,8 @@ public class LevelButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Camera.main.GetComponent<Animator>().SetTrigger("MoveDown");
+        AudioManager.Instance.PlaySound("Click");
+        Camera.main.GetComponent<Animator>().SetTrigger($"MoveDown{levelIndex}");
         _mainMenuManager.MainMenuLeave();
     }
 }

@@ -10,6 +10,8 @@ public class tunnelTransport : MonoBehaviour
     public int id = 0; //need to be private
     public Vector3 targetPosition = new Vector3(0, 0, 0);
     public LayerMask targetLayers;
+
+    public ParticleSystem particleSystem;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,7 @@ public class tunnelTransport : MonoBehaviour
     private void transportation(Vector3 targetPos,GameObject who)
     {
         Debug.Log("Successful transportation!");
+        particleSystem.Play();
         who.transform.position = targetPos;
     }
 }

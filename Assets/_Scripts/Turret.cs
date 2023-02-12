@@ -48,6 +48,7 @@ public class Turret : MonoBehaviour
             // Fire a bullet if the fire rate time has passed
             if (Time.time >= fireTime && Mathf.Abs(angleDiff) < 5)
             {
+                AudioManager.Instance.PlaySound("Shoot");
                 fireTime = Time.time + secondsBetweenFire;
                 Instantiate(bulletPrefab, transform.position, transform.rotation);
             }

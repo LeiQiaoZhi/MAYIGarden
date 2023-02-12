@@ -131,6 +131,8 @@ public class GameManager : MonoBehaviour
     public void LevelFinish()
     {
         Debug.LogWarning("LEVEL FINISHED.");
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlaySound("Victory");
         Animator animator = Camera.main.GetComponent<Animator>();
         if (animator)
         {
@@ -142,6 +144,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlaySound("Defeat");
         gameOverEvent.Raise();
 
         // Pause Everything

@@ -43,8 +43,14 @@ public class Root : Health
             StartCoroutine(Counter(from));
         }
 
+        if (change < 0)
+        {
+            AudioManager.Instance.PlayRandomFromSoundSet("Hit");
+        }
+
         if (change > 0)
         {
+            AudioManager.Instance.PlaySound("Heal");
             var effect = Instantiate(healingEffect, transform.GetChild(0));
             Destroy(effect,5f);
         }
