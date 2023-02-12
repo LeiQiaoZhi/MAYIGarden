@@ -34,8 +34,8 @@ MonoBehaviour:
       spawnRangeBotLeft: {x: 12, y: 5}
       spawnRangeTopRight: {x: 16, y: 0}
     - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
-      spawnRangeBotLeft: {x: -12.18, y: -9}
-      spawnRangeTopRight: {x: -10, y: -11}
+      spawnRangeBotLeft: {x: -12.12, y: -8.5}
+      spawnRangeTopRight: {x: -10, y: -10.77}
     averageSecondsBetweenSpawns: 2
     secondsBeforeSpawn: 15
     plantSpriteIndex: 1
@@ -47,8 +47,8 @@ MonoBehaviour:
       enemyNumber: 2
     nutrients:
     - nutrientPrefab: {fileID: 8558624565868087372, guid: 694c77606679a254b9366996a6d91b22, type: 3}
-      spawnRangeBotLeft: {x: -1.8, y: 2.5}
-      spawnRangeTopRight: {x: 1.66, y: -0.82}
+      spawnRangeBotLeft: {x: -1.35, y: -0.8}
+      spawnRangeTopRight: {x: 1.86, y: -4.11}
     averageSecondsBetweenSpawns: 3
     secondsBeforeSpawn: 15
     plantSpriteIndex: 1
@@ -62,8 +62,8 @@ MonoBehaviour:
       enemyNumber: 4
     nutrients:
     - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
-      spawnRangeBotLeft: {x: -16.7, y: -10}
-      spawnRangeTopRight: {x: -9.99, y: -12.05}
+      spawnRangeBotLeft: {x: -16.7, y: -9}
+      spawnRangeTopRight: {x: -9.99, y: -10.7}
     averageSecondsBetweenSpawns: 2
     secondsBeforeSpawn: 15
     plantSpriteIndex: 1
@@ -77,8 +77,8 @@ MonoBehaviour:
       enemyNumber: 2
     nutrients:
     - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
-      spawnRangeBotLeft: {x: -16.7, y: -10}
-      spawnRangeTopRight: {x: -9.99, y: -12.05}
+      spawnRangeBotLeft: {x: -16.1, y: -8.5}
+      spawnRangeTopRight: {x: -9.99, y: -10.1}
     averageSecondsBetweenSpawns: 2
     secondsBeforeSpawn: 15
     plantSpriteIndex: 2
