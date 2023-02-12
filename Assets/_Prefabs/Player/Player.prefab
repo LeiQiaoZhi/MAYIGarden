@@ -502,7 +502,7 @@ MonoBehaviour:
   myMovement: {fileID: 1684411819299273209}
   scanAreaSize: {x: 1.2, y: 2.4}
   scanAreaCentre: {fileID: 1039341671}
-  secondsBetweenAttacks: 0.2
+  secondsBetweenAttacks: 0.5
   targetLayers:
     serializedVersion: 2
     m_Bits: 4352
@@ -510,7 +510,7 @@ MonoBehaviour:
   attackDist: 0.5
   attackAnimateTime: 0.2
   attackAnimateScale: 1.5
-  attackKey: 106
+  attackKey: 32
   animator: {fileID: 508093846}
 --- !u!114 &909332629
 MonoBehaviour:
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c81992217d3237408aa4393854f4a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeKey: 32
+  placeKey: 106
   turretPrefab: {fileID: 810667712011595001, guid: 1fc96b6d59c7a94499ef4542f19b74a6, type: 3}
 --- !u!114 &3052350012555168390
 MonoBehaviour:
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tm: {fileID: 0}
-  TunnelKey: 116
+  TunnelKey: 107
   coolDownTime: 1
 --- !u!95 &586953478
 Animator:
