@@ -14,7 +14,7 @@ public class GameSceneManager : MonoBehaviour
 
     public void LoadScene(int index)
     {
-        Debug.Log($"Loading scene {SceneManager.GetSceneByBuildIndex(index).name}");
+        Debug.Log($"Loading scene {index}");
         SceneManager.LoadScene(index, LoadSceneMode.Single);
         Time.timeScale = 1;
     }
