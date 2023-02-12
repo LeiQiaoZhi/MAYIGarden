@@ -38,7 +38,7 @@ MonoBehaviour:
       spawnRangeTopRight: {x: 3, y: 0}
     averageSecondsBetweenSpawns: 2
     secondsBeforeSpawn: 15
-    plantSpriteIndex: 0
+    plantSpriteIndex: 1
   - waveName: Wave 3
     enemies:
     - enemyPrefab: {fileID: 2637863329726935539, guid: 5c66eea0853461e42905a0fbbbe006d7, type: 3}
