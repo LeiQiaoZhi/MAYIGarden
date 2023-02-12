@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906c25cdb1fb59341b989601d1c090e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  maxSpeed: 2
   target: {fileID: 0}
   findRadius: 0
   damage: 2

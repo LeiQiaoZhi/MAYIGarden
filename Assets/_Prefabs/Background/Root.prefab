@@ -131,10 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5063ad62916aa4c96a51deeb8f9699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 100
   counterDamage: 0
   secondsBeforeCounter: 0.5
-  healingEffect: {fileID: 0}
+  healingEffect: {fileID: 4001129223856456052, guid: a5d23cedcbe327c4681b915083ec1fb4, type: 3}
 --- !u!58 &4101845280212889934
 CircleCollider2D:
   m_ObjectHideFlags: 0

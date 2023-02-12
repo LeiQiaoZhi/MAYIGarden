@@ -27,7 +27,7 @@ MonoBehaviour:
       enemyNumber: 6
     nutrients:
     - nutrientPrefab: {fileID: 3859217117193867342, guid: f0bd6eb6c75940047a5183dd6508941e, type: 3}
-      spawnRangeBotLeft: {x: 0.84, y: 0.46}
+      spawnRangeBotLeft: {x: 0.75, y: 0.46}
       spawnRangeTopRight: {x: -4.35, y: 4.88}
     averageSecondsBetweenSpawns: 1
     secondsBeforeSpawn: 10
@@ -50,8 +50,8 @@ MonoBehaviour:
       enemyNumber: 5
     nutrients:
     - nutrientPrefab: {fileID: 4522370811610888048, guid: 1715465afefb8ee4784c04fb4228561c, type: 3}
-      spawnRangeBotLeft: {x: 10, y: -2}
-      spawnRangeTopRight: {x: 15, y: -10}
+      spawnRangeBotLeft: {x: 12.25, y: 2.97}
+      spawnRangeTopRight: {x: 17, y: -1.4}
     averageSecondsBetweenSpawns: 3
     secondsBeforeSpawn: 10
     plantSpriteIndex: 2
