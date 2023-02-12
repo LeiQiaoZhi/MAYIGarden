@@ -88,5 +88,6 @@ public class AggressiveEnemy : EnemyAttack
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(scannAreaCenter.position, findRadius);
+        Gizmos.DrawWireSphere(transform.position, threshold);
     }
 }

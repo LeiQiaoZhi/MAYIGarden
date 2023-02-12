@@ -368,7 +368,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elements_12
+      name: scorpion_limbs
       rect:
         serializedVersion: 2
         x: 373
@@ -389,7 +389,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elements_13
+      name: scorpion_body
       rect:
         serializedVersion: 2
         x: 714
@@ -508,12 +508,12 @@ TextureImporter:
       red_bug: -336071624
       ant_side_head: -274375823
       rock2: 1973142563
+      scorpion_body: -1408426933
       ant_side_body: -1509027205
-      elements_12: 1439834547
       rock1_broken: -1137968958
-      elements_13: -1408426933
       rock: 187324832
       ant_top_limb: 1998356084
+      scorpion_limbs: 1439834547
       rock2_broken: -969843313
       ant_top_body: -1350236259
       elements_10: -1977833147

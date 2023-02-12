@@ -5,9 +5,12 @@ using UnityEngine;
 public class CameralAnimator : MonoBehaviour
 {
     private UIManager _uiManager;
+
+    private GameSceneManager _sceneManager;
     // Start is called before the first frame update
     void Start()
     {
+        _sceneManager = FindObjectOfType<GameSceneManager>();
         _uiManager = FindObjectOfType<UIManager>();
     }
 
@@ -15,6 +18,11 @@ public class CameralAnimator : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GoToLevel(int index)
+    {
+        _sceneManager.LoadScene(index);
     }
 
     public void LevelEndUI()

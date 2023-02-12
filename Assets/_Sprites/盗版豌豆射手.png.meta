@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 936b0e52ed58c894f96d3019b7a146c1
+guid: 0532fbbb4cf68f147b7dbf93710cf514
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,127 +116,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mouse
+      name: bean_gun
       rect:
         serializedVersion: 2
-        x: 191
-        y: 1369
-        width: 571
-        height: 892
-      alignment: 9
-      pivot: {x: 0.5563329, y: 0.5961617}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bac513999e449db41b639f48e6ee855d
-      internalID: 1266866269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rock_dest_1
-      rect:
-        serializedVersion: 2
-        x: 797
-        y: 1562
-        width: 488
-        height: 718
+        x: 983
+        y: 505
+        width: 289
+        height: 322
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caf85ef2e46019a4d98a87c94088b413
-      internalID: -1721767057
+      spriteID: 6c9df677136c4574aad73df71d65af69
+      internalID: 854248980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spade
+      name: bean
       rect:
         serializedVersion: 2
-        x: 1328
-        y: 1546
-        width: 742
-        height: 745
-      alignment: 9
-      pivot: {x: 0.5180628, y: 0.48560816}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49dd167b6100799409841a98fd3039c8
-      internalID: 1991352429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water
-      rect:
-        serializedVersion: 2
-        x: 2711
-        y: 1532
-        width: 619
-        height: 780
+        x: 1318
+        y: 709
+        width: 160
+        height: 147
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a2ec20c10f0b3a4cb166b351bb01b67
-      internalID: -1031878728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tunnel_old
-      rect:
-        serializedVersion: 2
-        x: 2135
-        y: 1578
-        width: 420
-        height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cfdac660593cbc47aa8eb205ab0bdc1
-      internalID: 268470509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fence
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 685
-        width: 1536
-        height: 630
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e889b4fcc8b36a4c973d408d7bd0e04
-      internalID: 2132014934
+      spriteID: d46afa9b33787fb47bf1587c9491ac57
+      internalID: 213586472
       vertices: []
       indices: 
       edges: []
@@ -252,12 +168,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      water: -1031878728
-      rock_dest_1: -1721767057
-      mouse: 1266866269
-      tunnel_old: 268470509
-      fence: 2132014934
-      spade: 1991352429
+      bean_gun: 854248980
+      bean: 213586472
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -37,7 +37,7 @@ public class Root : Health
         // being attacked animation
 
         // deals counter damage
-        if (change < 0)
+        if (change < 0 && counterDamage > 0)
         {
             StartCoroutine(Counter(from));
         }

@@ -7,6 +7,7 @@ using TMPro;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject mainMenu;
     [SerializeField] Button levelsButton;
     public List<CanvasGroup> achievementCanvasGroups;
     public List<GameObject> views;
@@ -36,6 +37,11 @@ public class MainMenuManager : MonoBehaviour
         // achievements
         SetAchievementsLock();
         UpdateDeathCount();
+    }
+
+    public void MainMenuLeave()
+    {
+        mainMenu.GetComponent<Animator>().SetTrigger("Leave");
     }
 
     public void UpdateDeathCount()
