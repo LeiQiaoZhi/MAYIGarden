@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,12 +23,22 @@ public class LevelManager : MonoBehaviour
         }
 
         // TODO: remove these in published
+        for (int i = 1; i <= 3; i++)
+        {
+            LockLevel(i);
+        }
+
         foreach (var t in levelsUnlockedAtTheStart)
         {
             UnlockLevel(t);
         }
     }
 
+    public void LockLevel(int i)
+    {
+        Debug.Log($"Level {i} is locked");
+        PlayerPrefs.SetInt($"level{i}", 0);
+    }
     public void UnlockLevel(int i)
     {
         Debug.Log($"Level {i} is unlocked");
