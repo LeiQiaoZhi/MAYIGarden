@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
             // change plant sprite
             plantSpriteRender.sprite = levelInfo.GetSpriteForWave(index);
             
+            // wait a few seconds before start spawning
+            yield return new WaitForSeconds(wave.secondsBeforeSpawn);
+            
             // spawn nutrients
             foreach (var nutrient in wave.nutrients)
             {
@@ -53,8 +56,6 @@ public class GameManager : MonoBehaviour
                 Debug.LogWarning($"Spawning nutrient {nutrient.nutrientPrefab.name} to {targetPos}");
             }
 
-            // wait a few seconds before start spawning
-            yield return new WaitForSeconds(wave.secondsBeforeSpawn);
 
             // spawn wave 
             Debug.LogWarning($"Spawning Wave {index}");

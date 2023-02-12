@@ -14,10 +14,13 @@ public class playerHealth: Health
     public float dieRotTime = 3;
     public float immuneTime = 1;
     private bool immune = false;
+    private UIManager _uiManager;
+    public Animator playerSpriteAnimator;
 
     private void Awake()
     {
         _gameManager = FindObjectOfType<GameManager>();
+        _uiManager = FindObjectOfType<UIManager>();
     }
 
     public override void ChangeHealth(int change, GameObject from)
@@ -30,6 +33,8 @@ public class playerHealth: Health
 
         Debug.LogWarning("Player is being attacked");
 
+        _uiManager.UpdatePlayerHealthUI(_currentHealth);
+        
         // being attacked animation
 
         // deals counter damage
@@ -40,6 +45,7 @@ public class playerHealth: Health
             //health.ChangeHealth(-counterDamage, gameObject);
         }
     }
+    // ReSharper disable Unity.PerformanceAnalysis
     protected override void Die()
     {
         Debug.LogWarning("PLAYER HAS DIED.");
@@ -49,27 +55,29 @@ public class playerHealth: Health
         movement_manager.mySpeed= 0;
         immune= true;
         movement_manager.freezePos();
-        Debug.Log("The player is immune now.");
-        StartCoroutine(dieAndRotate(dieRotTime,normalSpeed));  
+        playerSpriteAnimator.SetTrigger("Die");
+        Debug.LogWarning("The player is immune now.");
+        StartCoroutine(DieAndRotate(dieRotTime,normalSpeed));  
     }
 
-    private IEnumerator dieAndRotate(float duration, float curr_speed)
+    private IEnumerator DieAndRotate(float duration, float curr_speed)
     {
-        float t = 0.0f;
-        while(t < duration)
-        {
-            t += Time.deltaTime;
-            gameObject.transform.Rotate(new Vector3(0, 0, rotPerSec) * Time.deltaTime);
-            yield return null;
-        }
+        // float t = 0.0f;
+        // while(t < duration)
+        // {
+        //     t += Time.deltaTime;
+        //     gameObject.transform.Rotate(new Vector3(0, 0, rotPerSec) * Time.deltaTime);
+        //     yield return null;
+        // }
+        // Debug.Log(movement_manager.mySpeed);
+        yield return new WaitForSeconds(immuneTime);
         movement_manager.mySpeed = curr_speed;
-        Debug.Log(movement_manager.mySpeed);
         _currentHealth = maxHealth;
         Debug.Log("Restored Player Health to " + maxHealth);
+        ChangeHealth(0,gameObject);
         movement_manager.UnfreezePos();
-        yield return new WaitForSeconds(immuneTime);
         immune = false;
-        Debug.Log("The player is now normal");
+        Debug.LogWarning("The player is now normal");
     }
 
 }

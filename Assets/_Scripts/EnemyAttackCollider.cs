@@ -29,6 +29,19 @@ public class EnemyAttackCollider : MonoBehaviour
         _attackCollider.enabled = false;
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (LayerMaskHelper.IsInLayerMask(col.gameObject.layer, _attackableMask))
+        {
+            Debug.LogWarning($"Hit {col.gameObject.name}");
+            Health health = col.gameObject.GetComponent<Health>();
+            if (health)
+            {
+                health.ChangeHealth(-_damage, transform.parent.gameObject);
+            }
+        } 
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (LayerMaskHelper.IsInLayerMask(col.gameObject.layer, _attackableMask))

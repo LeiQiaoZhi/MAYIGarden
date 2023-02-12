@@ -6,15 +6,14 @@ using UnityEngine;
 public abstract class Nutrient : MonoBehaviour
 {
     // [SerializeField] private float spawnHeight=12;
-    private Collider2D _collider;
-    private SpriteRenderer _spriteRenderer;
+    protected UIManager uiManager;
+    protected Collider2D _collider;
+    protected SpriteRenderer _spriteRenderer;
 
     public virtual void Start()
     {
-        
+        uiManager = FindObjectOfType<UIManager>();
     }
-    
-    
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -38,7 +37,6 @@ public abstract class Nutrient : MonoBehaviour
     {
         _collider.enabled = false;
         _spriteRenderer.maskInteraction = SpriteMaskInteraction.None;
-        Debug.LogWarning($"{targetPos},{fallSpeed}");
         while (-(targetPos.y-transform.position.y) > 0.1f)
         {
             transform.position +=  Vector3.down * (fallSpeed * Time.deltaTime);

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 298678206}
   - component: {fileID: 298678207}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ellipse 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &971452510
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 971452511}
   - component: {fileID: 971452512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ellipse 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039341670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 1.75, z: 0}
+  m_LocalPosition: {x: -0.06, y: 2.01, z: 0}
   m_LocalScale: {x: 1.6666667, y: 1.6666666, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -380,11 +380,10 @@ GameObject:
   - component: {fileID: 1684411819299273207}
   - component: {fileID: 1684411819299273206}
   - component: {fileID: 1684411819299273209}
-  - component: {fileID: 586953479}
-  - component: {fileID: 586953485}
   - component: {fileID: 909332623}
-  - component: {fileID: 909332629}
   - component: {fileID: 909332637}
+  - component: {fileID: 909332629}
+  - component: {fileID: 586953485}
   - component: {fileID: 3052350012555168390}
   - component: {fileID: 586953478}
   m_Layer: 9
@@ -468,7 +467,50 @@ MonoBehaviour:
   myDusts: {fileID: 4223853634784273459, guid: b3d0fe3c62981ba4abf4eea4aa771022, type: 3}
   attackCentreDist: 1
   mySpeed: 10
---- !u!114 &586953479
+--- !u!114 &909332623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684411819299273208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8d284b8c0643449a033c03ea9006e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  movement_manager: {fileID: 1684411819299273209}
+  rotPerSec: 240
+  dieRotTime: 3
+  immuneTime: 4
+  playerSpriteAnimator: {fileID: 508093846}
+--- !u!114 &909332637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684411819299273208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6556ae449299d374f82618e402dd34dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMovement: {fileID: 1684411819299273209}
+  scanAreaRadius: 0.8
+  scanAreaCentre: {fileID: 1039341671}
+  secondsBetweenAttacks: 0.2
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 4352
+  playerAttackDamage: 1
+  attackDist: 0.5
+  attackAnimateTime: 0.2
+  attackAnimateScale: 1.5
+  attackKey: 106
+  animator: {fileID: 508093846}
+--- !u!114 &909332629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -497,63 +539,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeKey: 32
   turretPrefab: {fileID: 810667712011595001, guid: 1fc96b6d59c7a94499ef4542f19b74a6, type: 3}
---- !u!114 &909332623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684411819299273208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8d284b8c0643449a033c03ea9006e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 5
-  movement_manager: {fileID: 1684411819299273209}
-  rotPerSec: 240
-  dieRotTime: 3
-  immuneTime: 1
---- !u!114 &909332629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684411819299273208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0988fa2e9d0cb240807d1ab795320c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myHealth: {fileID: 909332623}
-  kill: 0
-  suicideDamage: 10
---- !u!114 &909332637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684411819299273208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6556ae449299d374f82618e402dd34dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMovement: {fileID: 1684411819299273209}
-  scanAreaRadius: 1.5
-  scanAreaCentre: {fileID: 1039341671}
-  secondsBetweenAttacks: 0.2
-  targetLayers:
-    serializedVersion: 2
-    m_Bits: 4352
-  playerAttackDamage: 1
-  attackDist: 0.5
-  attackAnimateTime: 0.2
-  attackAnimateScale: 1.5
-  attackKey: 106
-  animator: {fileID: 508093846}
 --- !u!114 &3052350012555168390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6673000714301224019}
   - component: {fileID: 508093846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9155954908446282484}
   - component: {fileID: 4497138311197088493}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Limb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,4 +712,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
