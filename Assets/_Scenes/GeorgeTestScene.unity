@@ -2920,6 +2920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretNutrient
       objectReference: {fileID: 0}
+    - target: {fileID: 3859217117193867342, guid: f0bd6eb6c75940047a5183dd6508941e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4522370810564585236, guid: f0bd6eb6c75940047a5183dd6508941e, type: 3}
       propertyPath: fallSpeed
       value: 2
@@ -3108,6 +3112,10 @@ PrefabInstance:
     - target: {fileID: 3956286318519116282, guid: fcca6dd70e56ef0489fa8b1b6b8a824d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956286318519116283, guid: fcca6dd70e56ef0489fa8b1b6b8a824d, type: 3}
+      propertyPath: nutrientFallSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3956286318519116283, guid: fcca6dd70e56ef0489fa8b1b6b8a824d, type: 3}
       propertyPath: plantSpriteRender

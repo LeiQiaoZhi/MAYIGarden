@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Spawning")] public LevelInfoSO levelInfo;
     public List<Transform> spawnPoints;
+    [SerializeField] private float nutrientFallSpeed;
 
     List<LevelInfoSO.Wave> _waves;
     private bool spawnFinished = false;
@@ -39,6 +40,18 @@ public class GameManager : MonoBehaviour
 
             // change plant sprite
             plantSpriteRender.sprite = levelInfo.GetSpriteForWave(index);
+            
+            // spawn nutrients
+            foreach (var nutrient in wave.nutrients)
+            {
+                var nutrientComponent = Instantiate(nutrient.nutrientPrefab).GetComponent<Nutrient>();
+                Vector2 targetPos = new Vector2(
+                    UnityEngine.Random.Range(nutrient.spawnRangeBotLeft.x,nutrient.spawnRangeTopRight.x),
+                    UnityEngine.Random.Range(nutrient.spawnRangeBotLeft.y,nutrient.spawnRangeTopRight.y)
+                );
+                nutrientComponent.SpawnFromSky(targetPos,fallSpeed:nutrientFallSpeed);
+                Debug.LogWarning($"Spawning nutrient {nutrient.nutrientPrefab.name} to {targetPos}");
+            }
 
             // wait a few seconds before start spawning
             yield return new WaitForSeconds(wave.secondsBeforeSpawn);
@@ -106,5 +119,23 @@ public class GameManager : MonoBehaviour
 
         // Pause Everything
         Time.timeScale = 0;
+    }
+
+    private void OnDrawGizmos()
+    {
+        var levelInfoWaves = levelInfo.waves;
+        for (int index = 0; index < levelInfoWaves.Count; index++)
+        {
+            // new wave
+            LevelInfoSO.Wave wave = levelInfoWaves[index];
+
+            Gizmos.color = Color.yellow;
+            foreach (var nutrient in wave.nutrients)
+            {
+                Vector2 center = (nutrient.spawnRangeBotLeft + nutrient.spawnRangeTopRight) / 2;
+                Vector2 diff = nutrient.spawnRangeTopRight - nutrient.spawnRangeBotLeft;
+                Gizmos.DrawWireCube(center,diff);
+            }
+        }
     }
 }
